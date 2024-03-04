@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from 'xip-solidjs';
+---
+
+<Layout title="xip">
+	<main>
+    <h1 class="title">xip</h1>
+    <section id="intro">
+      <h2>What is xip?</h2>
+      <p>
+        xip is a way of building interfaces interface. 
+      </p>
+      <h2>Why xip?</h2>
+      <Button><a href="/xip">Learn more</a></Button>
+    </section>
+    <section>
+      <p>
+        [Under active investigation]
+      </p>
+    </section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding: 1rem;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+  #intro {
+		width: 60ch;
+		max-width: calc(100% - 2rem);
+  }
+	h1 {
+		font-weight: 700;
+		line-height: 1;
+	}
+  .title {
+    font-size: 5rem;
+  }
+</style>
