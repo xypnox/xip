@@ -1,43 +1,63 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Button } from 'xip-solidjs';
 ---
 
 <Layout title="xip">
 	<main>
     <h1 class="title">xip</h1>
-    <section id="intro">
-      <h2>What is xip?</h2>
-      <p>
-        xip is a way of building interfaces interface. 
-      </p>
-      <h2>Why xip?</h2>
-      <Button><a href="/xip">Learn more</a></Button>
-    </section>
-    <section>
-      <p>
-        [Under active investigation]
-      </p>
-    </section>
+    <p>eXperimental Interfaces Project</p>
+
+    <h2>What is xip?</h2>
+    <p>
+      [Under active investigation]
+    </p>
+    <h2>What projects constitute xip?</h2>
+    <ul>
+      <li>Themescura</li>
+      <li>[Under active investigation]</li>
+    </ul>
+    <h2>Why?</h2>
+    <p>
+      [REDACTED]
+    </p>
+
+    <hr />
+
+    <h2>Demo</h2>
+
+    <h3>Typography</h3>
+    <div>
+      {[-2, -1, 0, 1, 2, 3, 4, 5].map((step) => (
+      <div style={{ fontSize: `var(--font-size-step-${step})` }}>
+        {`var(--font-size-step-${step})`}
+      </div>
+      ))}
+    </div>
 	</main>
+  <footer>
+    <p>{new Date().getFullYear()} - Made by <a href="https://www.xypnox.com/">xypnox</a> </p>
+  </footer>
 </Layout>
 
 <style>
 	main {
 		padding: 1rem;
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+		color: var(--text);
+		font-size: var(--font-size-step-0);
+		line-height: 1.5;
 	}
-  #intro {
-		width: 60ch;
-		max-width: calc(100% - 2rem);
+  footer {
+    margin-top: 2rem;
+		padding: 1rem;
+  }
+  .title {
+    font-size: var(--font-size-step-5);
   }
 	h1 {
 		font-weight: 700;
 		line-height: 1;
 	}
-  .title {
-    font-size: 5rem;
+  h2 {
+    font-weight: 700;
   }
 </style>

@@ -1,15 +1,21 @@
 {
   "name": "themescura",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "A design system and theme engine toolkit",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/types/index.d.ts",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "prettier": "^3.2.5",
     "typescript": "^5.3.3"
   }
 }
