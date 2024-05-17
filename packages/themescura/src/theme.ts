@@ -9,7 +9,7 @@ const newKey = (keys: string[], value: any) =>
   [`--${keys.join("-")}`, value] as [string, any];
 
 const joinVariables = (vars: Record<string, any>) =>
-  Object.entries(vars).map(([k, v]) => `${k}: ${v};`).join('\n')
+  Object.entries(vars).map(([k, v]) => `${k}: ${v};`).join('\n ')
 
 
 /**
@@ -53,8 +53,13 @@ export interface Theme<BaseVars, ModeVars> {
 
 type Fn = (...args: any) => any
 
-
-
+/**
+ * Generate a theme from a palette
+ * @param palette
+ * @param baseFn
+ * @param modeFn 
+ * The baseFn and modeFn are functions convert their respective parts of the palette
+ */
 export const generateTheme =
   <
     BFn extends Fn,
@@ -62,16 +67,16 @@ export const generateTheme =
     T extends Theme<ReturnType<BFn>, ReturnType<MFn>>
   >(
     palette: Palette<Parameters<BFn>[0], Parameters<MFn>[0]>,
-    base: BFn,
-    mode: MFn
+    baseFn: BFn,
+    modeFn: MFn
   ): T => {
     return {
       id: palette.id,
       name: palette.name,
-      base: base(palette.base),
+      base: baseFn(palette.base),
       vars: {
-        light: mode(palette.vars.light),
-        dark: mode(palette.vars.dark),
+        light: modeFn(palette.vars.light),
+        dark: modeFn(palette.vars.dark),
       }
     } as T
   }
@@ -97,18 +102,16 @@ export const cssConverter = <M extends Record<string, any>, P extends Record<str
     light: flattenObject(theme.vars.light, newKey),
   }
 
-  const baseStyles = `:root { ${joinVariables(baseCssVars)} }`
+  const baseStyles = `:root { \n ${joinVariables(baseCssVars)} \n } \n`
 
   const modeVarsStyles = ['dark', 'light'].map(key => {
     const value = modeVars[key as keyof typeof modeVars]
-    return ` .${key}-mode { ${joinVariables(value)} } `
+    return `\n .${key}-mode { \n ${joinVariables(value)} \n } \n `
   }).join('\n')
 
   const mediaVarsStyles = ['dark', 'light'].map(key => {
     const value = modeVars[key as keyof typeof modeVars]
-    return `
-      @media (prefers-color-scheme: ${key}) { :root { ${joinVariables(value)} } }
-    `
+    return `\n @media (prefers-color-scheme: ${key}) { :root { \n ${joinVariables(value)} \n } } \n`
   }).join('\n')
 
   return `${baseStyles} ${mediaVarsStyles} ${modeVarsStyles}`

@@ -6,7 +6,7 @@ export const typeScale = ({
   minFontSize = 16,
   maxFontSize = 21,
   minTypeScale = 1.2,
-  maxTypeScale = 1.4,
+  maxTypeScale = 1.3,
   negativeSteps = 2,
   positiveSteps = 5,
 }) => {
@@ -25,6 +25,6 @@ export const typeScale = ({
 
   return scale.reduce((acc, size) => ({
     ...acc,
-    ['step-' + size.step]: size.clamp,
+    [size.step]: size.clamp,
   }), {} as Record<string, string>)
 }

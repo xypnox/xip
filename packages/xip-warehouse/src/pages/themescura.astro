@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {cssVal, palette, theme} from '../theme';
+---
+
+<Layout title="Themescura | xip">
+	<main>
+    <h1 class="title">Themescura</h1>
+    <p>The theme and design system thing</p>
+
+    <hr />
+
+    <h2>Demo</h2>
+
+    <h3>Base Palette</h3>
+    <pre><code set:text={JSON.stringify(palette, null, 2)} /></pre>
+
+    <h3>Generated Theme</h3>
+    <pre><code set:text={JSON.stringify(theme, null, 2)} /></pre>
+
+    <h3>Generated CSS</h3>
+    <pre><code set:text={cssVal} /></pre>
+    <hr />
+
+    <h3>Typography</h3>
+    <div>
+      {[-2, -1, 0, 1, 2, 3, 4, 5].map((step) => (
+      <div style={{ fontSize: `var(--font-size-${step})` }}>
+        {`var(--font-size-${step})`}
+      </div>
+      ))}
+    </div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding: 1rem;
+		color: var(--text);
+		font-size: var(--font-size-0);
+		line-height: 1.5;
+	}
+  footer {
+    margin-top: 2rem;
+		padding: 1rem;
+  }
+  .title {
+    font-size: var(--font-size-5);
+  }
+	h1 {
+		font-weight: 700;
+		line-height: 1;
+	}
+  h2 {
+    font-weight: 700;
+  }
+</style>

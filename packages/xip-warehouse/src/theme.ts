@@ -18,7 +18,7 @@ const vars = {
     text: '#000',
   },
   dark: {
-    primary: '#0070f3',
+    primary: '#3990ff',
     secondary: '#ff0080',
     background: '#000',
     text: '#fff',
@@ -32,7 +32,15 @@ const baseFn = (b: Base) => ({ ...b, })
 const modeFn = (m: Vars) => ({ ...m, })
 
 
-// Theme is a type with return types of baseFn and modeFn
-const theme = generateTheme({ id: 'myTheme', name: 'My Theme', base, vars }, baseFn, modeFn)
+const palette = { id: 'myTheme', name: 'My Theme', base, vars }
 
-export const cssVal = cssConverter(theme)
+// Theme is a type with return types of baseFn and modeFn
+const theme = generateTheme(palette, baseFn, modeFn)
+
+const cssVal = cssConverter(theme)
+
+export {
+  palette,
+  theme,
+  cssVal
+}

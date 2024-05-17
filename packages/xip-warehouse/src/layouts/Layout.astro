@@ -1,5 +1,6 @@
 ---
 import {cssVal} from '../theme';
+import Switcher from '../components/switcher.astro';
 interface Props {
 	title: string;
 }
@@ -17,40 +18,91 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
     <style set:text={cssVal}></style>
+    <script>
+      import { initTheme } from '../components/initTheme';
+      initTheme();
+      import 'iconify-icon';
+    </script>
 	</head>
-	<body class="body-contents">
-		<slot />
+	<body >
+    <div class="body-contents">
+      <nav>
+        <a href="/">xip</a>
+        <a href="/themescura">Themescura</a>
+        <Switcher /> 
+      </nav>
+      <slot />
+      <footer>
+        <p>{new Date().getFullYear()} - Made by <a href="https://www.xypnox.com/">xypnox</a> </p>
+      </footer>
+    </div>
+    <script>
+      import { onModeSwitch } from '../components/switcherSc';
+      // all buttons have data-mode-switcher attribute
+      const switcherElements = document.querySelectorAll('[data-mode-switcher]');
+      switcherElements.forEach((el) => {
+        el.addEventListener('click', onModeSwitch);
+      });
+    </script>
 	</body>
 </html>
 <style is:global>
 	html {
 		font-family: sans-serif;
-		background: var(--background);
-    color: var(--text);
 	}
   body {
+		background: var(--background);
+    color: var(--text);
+  }
+  .body-contents {
+    font-size: var(--font-size-0);
     max-width: var(--layout-width);
     margin: 0 auto;
   }
-  .body-contents {
-    font-size: var(--font-size-step-0);
-  }
   h1 {
-    font-size: var(--font-size-step-4);
+    font-size: var(--font-size-4);
   }
   h2 {
-    font-size: var(--font-size-step-3);
+    font-size: var(--font-size-3);
   }
   h3 {
-    font-size: var(--font-size-step-2);
+    font-size: var(--font-size-2);
   }
   h4 {
-    font-size: var(--font-size-step-1);
+    font-size: var(--font-size-1);
   }
-	code {
+	pre, code {
 		font-family: monospace;
+    font-size: var(--font-size--1);
+    line-height: 1.5;
 	}
   a {
     color: var(--primary);
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    a {
+      text-decoration: none;
+      color: var(--text);
+    }
+  }
+
+  footer {
+    padding: 1rem;
+    opacity: 0.66;
+  }
+  code, pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed var(--text);
+    margin: 2rem 0;
   }
 </style>

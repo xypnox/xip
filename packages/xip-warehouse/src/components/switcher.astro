@@ -1,0 +1,36 @@
+---
+---
+
+<button data-mode-switcher title="Switch Theme Mode">
+  <span class="dark">
+    <iconify-icon icon="ph:sun" />
+  </span>
+  <span class="light">
+    <iconify-icon icon="ph:moon-stars" />
+  </span>
+</button>
+
+<style>
+button[data-mode-switcher] {
+  display: flex;
+  background: var(--background);
+  color: var(--text);
+  border: none;
+  font-size: var(--font-size-1);
+  height: 100%;
+  width: max-content;
+  padding: 0.25rem;
+  .light, .dark {
+    display: inline-flex;
+    height: 100%;
+  }
+}
+
+
+:global(body.dark-mode) button[data-mode-switcher] .light {
+  display: none;
+}
+:global(body.light-mode) button[data-mode-switcher] .dark {
+  display: none;
+}
+</style>
