@@ -5,23 +5,28 @@ const base = {
     width: '1400px',
   },
   font: {
-    family: 'system-ui, sans-serif',
+    family: '\"Inter\", sans-serif',
+    heading: '\"Source Serif 4\", serif',
     size: typeScale({}),
   }
 }
 
 const vars = {
   light: {
-    primary: '#0070f3',
+    primary: '#000',
     secondary: '#ff0080',
-    background: '#fff',
-    text: '#000',
+    background: '#eee',
+    text: '#333',
+    border: '#ccc',
+    heading: '#000',
   },
   dark: {
-    primary: '#3990ff',
+    primary: '#fff',
     secondary: '#ff0080',
-    background: '#000',
-    text: '#fff',
+    background: '#111',
+    text: '#aaa',
+    border: '#444',
+    heading: '#fff',
   },
 }
 
@@ -38,6 +43,12 @@ const palette = { id: 'myTheme', name: 'My Theme', base, vars }
 const theme = generateTheme(palette, baseFn, modeFn)
 
 const cssVal = cssConverter(theme)
+
+console.log(JSON.stringify({
+  palette,
+  theme,
+  cssVal
+}, null, 2))
 
 export {
   palette,
