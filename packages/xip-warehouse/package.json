@@ -15,6 +15,7 @@
     "iconify-icon": "^2.1.0",
     "solid-js": "^1.8.15",
     "themescura": "workspace:*",
+    "solid-toast": "workspace:*",
     "typescript": "^5.3.3"
   }
 }
