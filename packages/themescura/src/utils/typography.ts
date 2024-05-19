@@ -21,8 +21,6 @@ export const typeScale = ({
     positiveSteps,
   })
 
-  // console.log({ scale })
-
   return scale.reduce((acc, size) => ({
     ...acc,
     [size.step]: size.clamp,
