@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {cssVal, palette, theme} from '../theme';
+import {ThemeEditor} from '../components/editor';
 ---
 
 <Layout title="Themescura | xip">
@@ -12,6 +13,7 @@ import {cssVal, palette, theme} from '../theme';
   <p>
 
   <h2>Demo</h2>
+  <ThemeEditor />
 
   <h3>Base Palette</h3>
   <pre><code set:text={JSON.stringify(palette, null, 2)} /></pre>

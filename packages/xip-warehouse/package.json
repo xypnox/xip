@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.5",
-    "@astrojs/solid-js": "^4.0.1",
+    "@astrojs/solid-js": "^4.2.0",
     "astro": "^4.4.4",
     "iconify-icon": "^2.1.0",
-    "solid-js": "^1.8.15",
+    "solid-js": "^1.8.17",
+    "xip-editor": "workspace:*",
     "themescura": "workspace:*",
-    "solid-toast": "workspace:*",
     "typescript": "^5.3.3"
   }
 }

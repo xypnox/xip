@@ -1,13 +1,13 @@
 {
-  "name": "solid-toast",
-  "version": "0.5.0",
-  "description": "Customizable Toast Notifications for SolidJS",
+  "name": "xip-editor",
+  "version": "0.1.0",
+  "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ardeora/solid-toast.git"
+    "url": "git+https://github.com/xypnox/solid-toast.git"
   },
   "exports": {
     "solid": {
@@ -33,19 +33,18 @@
   ],
   "keywords": [
     "solidjs",
-    "notifications",
-    "toast"
+    "notifications"
   ],
-  "author": "Aryan Deora",
-  "license": "MIT",
+  "author": "xypnox",
+  "license": "TBD",
   "bugs": {
-    "url": "https://github.com/ardeora/solid-toast/issues"
+    "url": "https://github.com/xypnox/xip/issues"
   },
   "sideEffects": false,
   "scripts": {
     "build": "rollup -c"
   },
-  "homepage": "https://github.com/ardeora/solid-toast#readme",
+  "homepage": "https://github.com/xypnox/xip#readme",
   "dependencies": {},
   "peerDependencies": {
     "solid-js": "^1.5.4"
