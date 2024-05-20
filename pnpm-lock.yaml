@@ -108,6 +108,9 @@ importers:
       solid-js:
         specifier: ^1.8.17
         version: 1.8.17
+      solid-styled-components:
+        specifier: ^0.28.5
+        version: 0.28.5(solid-js@1.8.17)
       themescura:
         specifier: workspace:*
         version: link:../themescura

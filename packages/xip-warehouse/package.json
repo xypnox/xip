@@ -14,9 +14,10 @@
     "astro": "^4.4.4",
     "iconify-icon": "^2.1.0",
     "solid-js": "^1.8.17",
+    "solid-styled-components": "^0.28.5",
     "themescura": "workspace:*",
-    "xip-ui": "workspace:*",
+    "typescript": "^5.3.3",
     "xip-editor": "workspace:*",
-    "typescript": "^5.3.3"
+    "xip-ui": "workspace:*"
   }
 }

@@ -101,13 +101,18 @@ const PreviewRow = styled(Row)`
     flex-direction: column;
   }
 `
+
+export const ThemePreviews = () => (
+  <PreviewRow style={{ gap: '1em' }}>
+    <ThemePreview class="light-mode" />
+    <ThemePreview class="dark-mode" />
+  </PreviewRow>
+)
+
 export const Editor = () => {
   return <div>
     Editor [IN ACTIVE DEVELOPMENT]
     <h2>Theme Preview</h2>
-    <PreviewRow style={{ gap: '1em' }}>
-      <ThemePreview class="light-mode" />
-      <ThemePreview class="dark-mode" />
-    </PreviewRow>
+    <ThemePreviews />
   </div>;
 }
