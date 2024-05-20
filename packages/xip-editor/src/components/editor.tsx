@@ -21,6 +21,7 @@ const Card = styled(Column)`
 const PreviewWrapper = styled(Column)`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   padding: 1em;
   gap: 2em;
   background: var(--background);
@@ -52,11 +53,13 @@ const ThemePreview = (props: ThemePreviewProps) => {
       <Input type="password" placeholder="HardNut2CrakersExtremely" />
     </Label>
     </Column>
-    <Row style={{ gap: '1em' }}>
-      <Button>Basic</Button>
+    <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <Button class="primary">Primary</Button>
       <Button class="secondary">Secondary</Button>
       <Button class="tertiary">Tertiary</Button>
+    </Row>
+    <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
+      <Button>Basic</Button>
     </Row>
     <Card>
       <h3>Card</h3>
@@ -79,7 +82,7 @@ export const Editor = () => {
   return <div>
     Editor [IN ACTIVE DEVELOPMENT]
     <h2>Theme Preview</h2>
-    <Row style={{ gap: '1em' }}>
+    <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <ThemePreview class="light-mode" />
       <ThemePreview class="dark-mode" />
     </Row>
