@@ -9,7 +9,12 @@ const Card = styled(Column)`
   color: var(--text);
   border-radius: 0.5em;
 
-
+  &:has(&) {
+    border-radius: calc(2 * 0.5em);
+  }
+  &:has(&:has(&)) {
+    border-radius: calc(4 * 0.5em);
+  }
   & > & {
     background: var(--surface-1);
   }
@@ -27,7 +32,7 @@ const PreviewWrapper = styled(Column)`
   background: var(--background);
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 0.5em;
+  border-radius: 1.5em;
   h3, h4, h5, p {
     margin: 0;
   }
@@ -44,14 +49,14 @@ const ThemePreview = (props: ThemePreviewProps) => {
   return <PreviewWrapper {...props}>
     <h3>{props.class}</h3>
     <Column>
-    <Label>
-      Email
-      <Input type="text" placeholder="designer@web.com" />
-    </Label>
-    <Label>
-      Password
-      <Input type="password" placeholder="HardNut2CrakersExtremely" />
-    </Label>
+      <Label>
+        Email
+        <Input type="text" placeholder="designer@web.com" />
+      </Label>
+      <Label>
+        Password
+        <Input type="password" placeholder="HardNut2CrakersExtremely" />
+      </Label>
     </Column>
     <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <Button class="primary">Primary</Button>
@@ -60,7 +65,17 @@ const ThemePreview = (props: ThemePreviewProps) => {
     </Row>
     <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <Button>Basic</Button>
+      <Button disabled>Disabled</Button>
     </Row>
+    <Card>
+      <p>Card</p>
+    </Card>
+    <Card>
+      <p>Notice how the borders round</p>
+      <Card>
+        <p>Card in card</p>
+      </Card>
+    </Card>
     <Card>
       <h3>Card</h3>
       <p>
@@ -68,23 +83,31 @@ const ThemePreview = (props: ThemePreviewProps) => {
       </p>
       <Card>
         <h4>Card</h4>
-        <p>Card inside a card.</p>
+        <p>This has been implemented to only a depth of 3.</p>
         <Card>
           <h5>Card</h5>
-          <p>Card inside a card inside a card.</p>
+          <p>You have bigger problems if you need 4.</p>
         </Card>
       </Card>
     </Card>
   </PreviewWrapper>;
 
 }
+
+const PreviewRow = styled(Row)`
+  width: 100%;
+  gap: 1em;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
 export const Editor = () => {
   return <div>
     Editor [IN ACTIVE DEVELOPMENT]
     <h2>Theme Preview</h2>
-    <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
+    <PreviewRow style={{ gap: '1em' }}>
       <ThemePreview class="light-mode" />
       <ThemePreview class="dark-mode" />
-    </Row>
+    </PreviewRow>
   </div>;
 }

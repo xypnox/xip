@@ -45,9 +45,10 @@ const Button = styled('button')`
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   transition-timing-function: ease-in-out;
   color: var(--primary-b);
-  border-color: var(--primary-b);
+  border-color: var(--border);
   background-color: var(--surface-0);
   &:hover {
+    color: var(--primary-s-6);
     border-color: var(--primary-s-6);
     background-color: var(--surface-1);
   }
@@ -64,12 +65,18 @@ const Button = styled('button')`
     outline-offset: 2px;
   }
 
-  ${
-    ['primary', 'secondary', 'tertiary'].map(generateClass).join('\n')
+  ${['primary', 'secondary', 'tertiary'].map(generateClass).join('\n')
   }
 
   &.bordered {
     background-color: transparent;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border: 2px solid var(--border);
+    color: var(--text);
+    opacity: 0.66;
   }
 `
 
