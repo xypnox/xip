@@ -1,0 +1,34 @@
+---
+import Switcher from './switcher.astro';
+const links = [
+  {
+    name: 'xip',
+    url: '/',
+  },
+  {
+    name: 'Philosophy',
+    url: '/philosophy/',
+  },
+  {
+    name: 'Themescura',
+    url: '/themescura/',
+  },
+];
+
+const pathname = new URL(Astro.request.url).pathname;
+---
+<nav>
+  <ul class="links"> 
+    {links.map((link) => (
+      <li>
+        <a
+          href={link.url}
+          class={(pathname === link.url ? "active" : '') + ((link.url === '/') ? ' home' : '')}
+        >
+          {link.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <Switcher /> 
+</nav>

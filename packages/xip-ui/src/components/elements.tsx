@@ -65,12 +65,7 @@ const Button = styled('button')`
     outline-offset: 2px;
   }
 
-  ${['primary', 'secondary', 'tertiary'].map(generateClass).join('\n')
-  }
-
-  &.bordered {
-    background-color: transparent;
-  }
+  ${['primary', 'secondary', 'tertiary'].map(generateClass).join('\n')}
 
   &:disabled {
     background-color: transparent;

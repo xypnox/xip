@@ -1,29 +1,11 @@
 ---
 import {cssVal} from '../theme';
-import Switcher from '../components/switcher.astro';
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-
-const links = [
-  {
-    name: 'xip',
-    url: '/',
-  },
-  {
-    name: 'Philosophy',
-    url: '/philosophy',
-  },
-  {
-    name: 'Themescura',
-    url: '/themescura',
-  },
-];
-
-
-const pathname = new URL(Astro.request.url).pathname;
+import Nav from '../components/nav.astro';
 ---
 
 <!doctype html>
@@ -49,21 +31,7 @@ const pathname = new URL(Astro.request.url).pathname;
 	</head>
 	<body >
     <div class="body-contents">
-      <nav>
-        <ul class="links"> 
-{links.map((link) => (
-          <li>
-            <a
-              href={link.url}
-              class={(pathname === link.url ? "active" : '') + ((link.url === '/') ? ' home' : '')}
-            >
-              {link.name}
-            </a>
-          </li>
-          ))}
-        </ul>
-        <Switcher /> 
-      </nav>
+      <Nav />
       <main>
         <slot />
       </main>
