@@ -1,5 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import fs from 'node:fs';
+
+const getRawSvg = async () => {
+  // read the svg file
+  return fs.promises.readFile('./src/assets/dependce.svg')
+    .then(response => response.toString())
+    .then(text => {
+      return text;
+    });
+}
+
+const svg = await getRawSvg(); 
 ---
 
 <Layout title="xip">
@@ -21,13 +33,38 @@ import Layout from '../layouts/Layout.astro';
     <li>[CLASSIFIED]</li>
   </ul>
   <h2>What projects constitute xip?</h2>
+  <figure class="aside right" set:html={svg} />
   <ul>
     <li>
       <a href="/themescura">Themescura</a><br />
       An Obscura of Variables, Modes and Themes
     </li>
+    <li>
+      xip-ui<br />
+      The UI includes building blocks and layout helpers.<br />
+      It uses themescura internally and exposes the generated theme to be overridden.
+    </li>
+    <li>
+      xip-editor<br />
+      The editor includes the interfaces necessary to edit the theme live adn render the debug information related to the editor.<br />
+      It also uses themescura internally and exposes the generated theme to be overridden.
+    </li>
+    <li>
+      xip-warehouse<br />
+      Documentation for xip, with a sprinkling of brief demonstrations.<br />
+      This right here XD
+    </li>
+    <br />
+    <br />
+    <li>[REDACTED]</li>
+
+    <li>[REDACTED]</li>
     <li>[HIDDEN]</li>
   </ul>
+
+  <blockquote>
+    The whole point of the rest of the pieces is to make styling a reasonable experience.  (If not an easy one.)
+  </blockquote>
 
   <hr />
 

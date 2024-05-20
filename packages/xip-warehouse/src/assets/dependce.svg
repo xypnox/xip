@@ -1,0 +1,64 @@
+<svg width="481" height="532" viewBox="0 0 481 532" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    svg {
+    --color-text: var(--text);
+    --color-accent1: var(--tertiary-4);
+    --color-accent2: var(--primary-4);
+    --color-accent3: var(--secondary-4);
+    }
+    .text {
+    fill: var(--color-text);
+    }
+    .accent1-stroke {
+    stroke: var(--color-accent1);
+    }
+    .accent1-fill {
+    fill: var(--color-accent1);
+    }
+    .accent2-stroke {
+    stroke: var(--color-accent2);
+    }
+    .accent2-fill {
+    fill: var(--color-accent2);
+    }
+    .accent3-stroke {
+    stroke: var(--color-accent3);
+    }
+    .accent3-fill {
+    fill: var(--color-accent3);
+    }
+  </style>
+  <rect x="4" y="40" width="222" height="74" rx="12" class="accent1-stroke" stroke-width="8" />
+  <text class="text" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" letter-spacing="0em"><tspan x="44.5" y="85.7273">Themescura</tspan></text>
+  <rect x="248" y="454" width="222" height="74" rx="12" class="accent3-stroke" stroke-width="8" />
+  <text class="text" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" letter-spacing="0em"><tspan x="274.5" y="499.727">xip-warehouse</tspan></text>
+  <rect x="176" y="312" width="222" height="74" rx="12" class="accent2-stroke" stroke-width="8" />
+  <text class="text" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" letter-spacing="0em"><tspan x="231.5" y="357.727">xip-editor</tspan></text>
+  <rect x="90" y="176" width="222" height="74" rx="12" class="accent2-stroke" stroke-width="8" />
+  <text class="text" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" letter-spacing="0em"><tspan x="169" y="221.727">xip-ui</tspan></text>
+  <text class="accent1-fill" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" font-weight="500" letter-spacing="0em"><tspan x="14" y="26.7273">Vanilla</tspan></text>
+  <text class="accent2-fill" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" font-weight="500" letter-spacing="0em"><tspan x="102" y="162.727">SolidJS</tspan></text>
+  <text class="accent2-fill" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" font-weight="500" letter-spacing="0em"><tspan x="188" y="298.727">SolidJS</tspan></text>
+  <text class="accent3-fill" xml:space="preserve" style="white-space: pre" font-family="Inter"
+    font-size="24" font-weight="500" letter-spacing="0em"><tspan x="256" y="440.727">Astro</tspan></text>
+  <path
+    d="M460.642 441.637C460.994 442.387 461.887 442.71 462.637 442.358L474.859 436.624C475.609 436.272 475.931 435.379 475.58 434.629C475.228 433.879 474.334 433.556 473.584 433.908L462.721 439.005L457.624 428.141C457.272 427.391 456.379 427.069 455.629 427.42C454.879 427.772 454.556 428.666 454.908 429.416L460.642 441.637ZM240 75.5C335.864 75.5 404.895 128.118 443.05 200.078C481.231 272.087 488.442 363.397 460.589 440.49L463.411 441.51C491.558 363.603 484.269 271.413 445.7 198.672C407.105 125.882 337.136 72.5 240 72.5V75.5Z"
+    class="accent1-fill" />
+  <path
+    d="M320.688 301.726C321.089 302.451 322.002 302.714 322.726 302.312L334.538 295.774C335.262 295.373 335.525 294.46 335.123 293.735C334.722 293.01 333.809 292.748 333.085 293.149L322.586 298.961L316.774 288.462C316.373 287.738 315.46 287.475 314.735 287.877C314.01 288.278 313.748 289.191 314.149 289.915L320.688 301.726ZM238 75.5C255.977 75.5 271.664 83.9891 284.754 98.2488C297.861 112.525 308.303 132.53 315.698 155.338C330.494 200.968 332.965 257.411 320.558 300.586L323.442 301.414C336.035 257.589 333.506 200.532 318.552 154.412C311.072 131.345 300.452 110.912 286.964 96.22C273.461 81.5109 257.023 72.5 238 72.5V75.5Z"
+    class="accent1-fill" />
+  <path
+    d="M119 260L120.387 260.571L117.802 259.098L119 260ZM166.061 345.061C166.646 344.475 166.646 343.525 166.061 342.939L156.515 333.393C155.929 332.808 154.979 332.808 154.393 333.393C153.808 333.979 153.808 334.929 154.393 335.515L162.879 344L154.393 352.485C153.808 353.071 153.808 354.021 154.393 354.607C154.979 355.192 155.929 355.192 156.515 354.607L166.061 345.061ZM238.109 484.01C238.667 483.398 238.623 482.449 238.01 481.891L228.031 472.799C227.419 472.241 226.47 472.285 225.912 472.898C225.354 473.51 225.398 474.459 226.011 475.017L234.881 483.099L226.799 491.969C226.241 492.581 226.285 493.53 226.898 494.088C227.51 494.646 228.459 494.602 229.017 493.989L238.109 484.01ZM117.613 259.429C110.463 276.792 110.455 298.221 118.131 315.363C125.844 332.588 141.341 345.5 165 345.5V342.5C142.659 342.5 128.156 330.412 120.869 314.137C113.545 297.779 113.536 277.208 120.387 260.571L117.613 259.429ZM117.802 259.098C86.9233 300.1 84.1927 357.947 105.384 404.744C126.607 451.612 171.887 487.53 237.07 484.498L236.93 481.502C173.113 484.47 128.893 449.388 108.117 403.506C87.3074 357.553 90.0768 300.9 120.198 260.902L117.802 259.098Z"
+    class="accent2-fill" />
+  <path
+    d="M78.0607 211.061C78.6464 210.475 78.6464 209.525 78.0607 208.939L68.5147 199.393C67.9289 198.808 66.9792 198.808 66.3934 199.393C65.8076 199.979 65.8076 200.929 66.3934 201.515L74.8787 210L66.3934 218.485C65.8076 219.071 65.8076 220.021 66.3934 220.607C66.9792 221.192 67.9289 221.192 68.5147 220.607L78.0607 211.061ZM33.1246 123.429C25.9917 140.752 25.0842 162.649 31.8554 180.288C38.6646 198.025 53.2854 211.5 77 211.5V208.5C54.7146 208.5 41.0912 195.975 34.6561 179.212C28.1831 162.351 29.0315 141.248 35.8986 124.571L33.1246 123.429Z"
+    class="accent1-fill" />
+  <path d="M177.189 400C163.189 434 190 483 236 483" class="accent2-stroke" stroke-width="3" />
+</svg>

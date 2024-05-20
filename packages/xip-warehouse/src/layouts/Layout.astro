@@ -135,6 +135,15 @@ const pathname = new URL(Astro.request.url).pathname;
   h1.title {
     font-size: var(--font-size-5);
   }
+  blockquote {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    border-left: 0.2em solid var(--border);
+    padding: 0.5em 1em;
+    font-size: var(--font-size-1);
+    margin: 1em 0;
+    max-width: 60ch;
+  }
   nav {
     display: flex;
     align-items: center;
@@ -205,5 +214,28 @@ const pathname = new URL(Astro.request.url).pathname;
     border: 0;
     border-top: 1px solid var(--border);
     margin: 2em 0;
+  }
+
+  figure.aside {
+    float: right;
+    clear: right;
+    max-width: 40%;
+    height: auto;
+    gap: 0.5em;
+    margin: -2em 2em 2em;
+    figcaption {
+      font-size: var(--font-size--1);
+      color: var(--text--1);
+    }
+    img, svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media (max-width: 800px) {
+    figure.aside {
+      float: none;
+      max-width: 100%;
+    }
   }
 </style>
