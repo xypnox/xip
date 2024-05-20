@@ -36,6 +36,7 @@ const Column = styled('div')`
   width: max-content;
   max-width: 100%;
   flex-direction: column;
+  padding: 4px;
   box-shadow: inset 0px 0px 0px 1px var(--border);
 `
 
@@ -49,11 +50,11 @@ const Wrapper = styled('div')`
   position: relative;
   font-family: var(--font-mono);
   font-size: var(--font-size--1);
-
-  border-collapse: collapse;
+  max-width: 100%;
 
   h4 {
-    margin: 0em 0 0.5em;
+    margin: 0;
+    padding: 4px;
   }
 `
 
@@ -68,14 +69,14 @@ export const ThemeDebug = <B extends Fn, M extends Fn>(props: Props<B, M>) => {
     <ObjectDebug obj={props.theme.base} />
     <h3>Mode</h3>
     <Row class="noshade" style={{ gap: '2rem', 'justify-content': 'flex-start' }}>
-      <div>
+      <Column>
         <h4>Light</h4>
         <ObjectDebug obj={props.theme.vars.light} />
-      </div>
-      <div>
+      </Column>
+      <Column>
         <h4>Dark</h4>
         <ObjectDebug obj={props.theme.vars.dark} />
-      </div>
+      </Column>
     </Row>
   </Wrapper>
 }
