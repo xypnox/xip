@@ -50,6 +50,7 @@
   "peerDependencies": {
     "solid-js": "^1.5.4",
     "themescura": "workspace:*",
+    "xip-ui": "workspace:*",
     "solid-styled-components": "^0.28.5"
   },
   "devDependencies": {

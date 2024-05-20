@@ -1,6 +1,7 @@
 import { createMemo, Show, Switch, Match, For } from 'solid-js';
 import type { Fn, ThemeFn, PaletteFn } from 'themescura';
 import { styled } from 'solid-styled-components';
+import { Column as UIColumn } from 'xip-ui';
 
 interface Props<B extends Fn, M extends Fn> {
   theme: ThemeFn<B, M>
@@ -31,7 +32,7 @@ const Key = styled('div')`
   color: var(--primary-3);
 `
 
-const Column = styled('div')`
+const Column = styled(UIColumn)`
   display: flex;
   width: max-content;
   max-width: 100%;

@@ -1,4 +1,4 @@
-import { cssConverter, generateTheme, getShades, typeScale, shiftLCH, invertLightness } from 'themescura'
+import { cssConverter, generateTheme, invertLightness, getShades, typeScale, shiftLCH } from 'themescura'
 
 const base = {
   layout: {
@@ -15,7 +15,7 @@ const base = {
 const vars = {
   light: {
     primary: 'oklch(55.5% 0.15 220)',
-    background: 'oklch(88% 0.015 220)',
+    background: 'oklch(90% 0.02 220)',
     text: 'oklch(25% 0.05 240)',
     heading: 'oklch(18% 0.05 280)',
   },
@@ -33,31 +33,23 @@ type Vars = typeof vars.light
 const shade = (color: string, lightness: number, md: 'light' | 'dark') => getShades(
   color,
   [5, 5],
-  { lightness })
+  { lightness: md === 'light' ? lightness : -lightness })
 
-const overlay = (color: string, md: 'light' | 'dark') => shiftLCH(color, { lightness: md === 'light' ? 35 : -35, chroma: -0.1 })
-
-
-const getUIColor = (color: string, md: 'light' | 'dark') => {
-  return {
-    b: color,
-    s: shade(color, 6, md),
-    o: overlay(color, md),
-  }
-}
 
 const baseFn = (b: Base) => ({
   ...b,
 })
 const modeFn = (m: Vars, md: 'light' | 'dark') => ({
   ...m,
-  primary: getUIColor(m.primary, md),
-  secondary: getUIColor(shiftLCH(m.primary, { hue: 120 }), md),
-  tertiary: getUIColor(shiftLCH(m.primary, { hue: -120 }), md),
-  border: shiftLCH(m.text, { lightness: md === 'light' ? 58 : -50, chroma: -0.02 }),
+  primary: shade(m.primary, 6, md),
+  primaryOver: invertLightness(m.primary),
+  secondary: shade(
+    shiftLCH(m.primary, { hue: 120 }), 5, md),
+  tertiary: shade(shiftLCH(m.primary, { hue: -120 }), 5, md),
+  border: shiftLCH(m.text, { lightness: md === 'light' ? 60 : -50 }),
   primaryLight: shiftLCH(m.primary, { lightness: md === 'light' ? 10 : -10, chroma: -0.08 }),
   // Remove the first element
-  surface: getShades(m.background, [0, 3], { lightness: md === 'light' ? 4 : 8 }).slice(1),
+  surface: getShades(m.background, [0, 3], { lightness: md === 'light' ? 3 : 8 }).slice(1),
 })
 
 

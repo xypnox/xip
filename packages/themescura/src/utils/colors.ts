@@ -22,6 +22,11 @@ const getLCH = (color: Color) => {
   return val
 }
 
+export const invertLightness = (color: Color) => {
+  const c = getLCH(color)
+  return `oklch(${100 - c.l}% ${c.c} ${c.h})`
+}
+
 interface Shift {
   chroma?: number;
   lightness?: number;
