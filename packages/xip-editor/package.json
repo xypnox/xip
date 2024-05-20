@@ -42,12 +42,15 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "dev": "rollup --watch -c"
   },
   "homepage": "https://github.com/xypnox/xip#readme",
   "dependencies": {},
   "peerDependencies": {
-    "solid-js": "^1.5.4"
+    "solid-js": "^1.5.4",
+    "themescura": "workspace:*",
+    "solid-styled-components": "^0.28.5"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.0",

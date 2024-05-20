@@ -51,8 +51,30 @@ export interface Theme<BaseVars, ModeVars> {
   }
 }
 
-type Fn = (...args: any) => any
+export type Fn = (...args: any) => any
 
+export type ThemeFn<BFn extends Fn, MFn extends Fn> = Theme<ReturnType<BFn>, ReturnType<MFn>>
+export type PaletteFn<BFn extends Fn, MFn extends Fn> = Palette<Parameters<BFn>[0], Parameters<MFn>[0]>
+
+// Export type that gets the base type from a theme type
+export type BaseTheme<T extends Theme<any, any>> = T['base']
+
+
+/**
+ * Generate a theme from a palette
+ * @param palette
+ * @param baseFn
+ * @param modeFn
+ * The baseFn and modeFn are functions convert their respective parts of the palette
+ */
+// export declare const generateTheme: <
+//   BFn extends Fn,
+//   MFn extends Fn,
+//   T extends ThemeFn<BFn, MFn>
+// >(
+//   palette: PaletteFn<BFn, MFn>,
+//   baseFn: BFn,
+//   modeFn: MFn) => T;
 /**
  * Generate a theme from a palette
  * @param palette
@@ -64,9 +86,9 @@ export const generateTheme =
   <
     BFn extends Fn,
     MFn extends Fn,
-    T extends Theme<ReturnType<BFn>, ReturnType<MFn>>
+    T extends ThemeFn<BFn, MFn>
   >(
-    palette: Palette<Parameters<BFn>[0], Parameters<MFn>[0]>,
+    palette: PaletteFn<BFn, MFn>,
     baseFn: BFn,
     modeFn: MFn
   ): T => {
@@ -75,8 +97,8 @@ export const generateTheme =
       name: palette.name,
       base: baseFn(palette.base),
       vars: {
-        light: modeFn(palette.vars.light),
-        dark: modeFn(palette.vars.dark),
+        light: modeFn(palette.vars.light, 'light'),
+        dark: modeFn(palette.vars.dark, 'dark'),
       }
     } as T
   }

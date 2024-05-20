@@ -8,6 +8,7 @@
   "types": "dist/cjs/types/index.d.ts",
   "scripts": {
     "build": "rollup -c",
+    "dev": "rollup --watch -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
