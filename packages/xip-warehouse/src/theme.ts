@@ -17,22 +17,20 @@ const vars = {
     primary: 'oklch(55.5% 0.15 220)',
     background: 'oklch(88% 0.015 220)',
     text: 'oklch(25% 0.05 240)',
-    heading: 'oklch(18% 0.05 280)',
   },
   dark: {
     primary: 'oklch(61.5% 0.15 220)',
     background: 'oklch(13% 0.04 220)',
     text: 'oklch(75% 0.05 240)',
-    heading: 'oklch(95% 0.05 280)',
   },
 }
 
 type Base = typeof base
 type Vars = typeof vars.light
 
-const shade = (color: string, lightness: number, md: 'light' | 'dark') => getShades(
+const shade = (color: string, lightness: number, len: number = 5) => getShades(
   color,
-  [5, 5],
+  [len, len],
   { lightness })
 
 const overlay = (color: string, md: 'light' | 'dark') => shiftLCH(color, { lightness: md === 'light' ? 35 : -35, chroma: -0.1 })
@@ -41,7 +39,7 @@ const overlay = (color: string, md: 'light' | 'dark') => shiftLCH(color, { light
 const getUIColor = (color: string, md: 'light' | 'dark') => {
   return {
     b: color,
-    s: shade(color, 6, md),
+    s: shade(color, 6),
     o: overlay(color, md),
   }
 }
@@ -54,6 +52,7 @@ const modeFn = (m: Vars, md: 'light' | 'dark') => ({
   primary: getUIColor(m.primary, md),
   secondary: getUIColor(shiftLCH(m.primary, { hue: 120 }), md),
   tertiary: getUIColor(shiftLCH(m.primary, { hue: -120 }), md),
+  'textS': getShades(m.text, [1, 1], { lightness: md === 'light' ? -10 : 10 }),
   border: shiftLCH(m.text, { lightness: md === 'light' ? 58 : -50, chroma: -0.02 }),
   primaryLight: shiftLCH(m.primary, { lightness: md === 'light' ? 10 : -10, chroma: -0.08 }),
   // Remove the first element

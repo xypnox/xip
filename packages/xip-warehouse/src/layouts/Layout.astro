@@ -71,7 +71,7 @@ import Nav from '../components/nav.astro';
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--heading);
+    color: var(--textS-2);
   }
   h1 {
     font-size: var(--font-size-4);
@@ -115,7 +115,7 @@ import Nav from '../components/nav.astro';
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1em;
+    gap: 0.5em;
     width: 100%;
     border-bottom: 1px solid var(--border);
     ul {
@@ -123,13 +123,13 @@ import Nav from '../components/nav.astro';
       align-items: stretch;
       flex-wrap: wrap;
       list-style: none;
-      padding: 0;
+      gap: 0.5em 2em;
       margin: 0;
+      padding: 0.5em 1em;
     }
     a {
       display: inline-flex;
       align-items: center;
-      padding: 0.5em 1em;
       text-decoration: none;
       color: var(--text);
       height: 100%;
@@ -141,7 +141,8 @@ import Nav from '../components/nav.astro';
       font-size: 1.1em;
       font-family: var(--font-heading);
       text-decoration: underline;
-      color: var(--heading);
+      color: var(--textS-2);
+      text-decoration-color: var(--primary-b);
     }
   }
 

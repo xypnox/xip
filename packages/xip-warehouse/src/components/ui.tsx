@@ -3,13 +3,36 @@ import { styled } from 'solid-styled-components';
 import { createSignal, type ComponentProps, type ParentProps } from "solid-js";
 
 const Row = styled(UIRow)`
-  gap: 1rem;
+  gap: 1em;
   flex-wrap: wrap;
 `
 
 const Column = styled(UIColumn)`
-  gap: 1rem;
+  gap: 1em;
 `
+
+
+const ScaledRepitition = (props: ParentProps & {
+  limit?: number
+  showSize?: boolean
+  column?: boolean
+} & ComponentProps<typeof Row>) => {
+  return (
+    <Row style={{
+      'align-items': props.column ? 'flex-start' : 'center',
+      'flex-direction': props.column ? 'column' : 'row',
+    }} {...props}>
+      {[-2, -1, 0, 1, 2, 3, 4, 5]
+        .slice(0, props.limit ?? 5)
+        .reverse()
+        .map((step) => (
+          <div style={{ 'font-size': `var(--font-size-${step})`, "margin": '0.25em 0' }}>
+            {props.showSize ? `--font-size-${step}` : props.children}
+          </div>
+        ))}
+    </Row>
+  )
+}
 
 interface RepProps extends ParentProps {
   buttonProps?: ComponentProps<typeof Button>
@@ -26,10 +49,25 @@ const ButtonRepetition = (props: RepProps) => (
 )
 
 const [value, setValue] = createSignal(50);
+const [inpValue, setInpValue] = createSignal('designer@developer.cool');
 
 export const UIElements = () => (
   <Column>
 
+    <h2>Typography</h2>
+
+    <h3>Font Scale</h3>
+    <ScaledRepitition column limit={8} showSize> </ScaledRepitition>
+    <h3>Font Family</h3>
+    <ScaledRepitition limit={5}><div style={{
+      'font-family': 'var(--font-heading)',
+    }}>Heading</div></ScaledRepitition>
+    <ScaledRepitition limit={5}><div style={{
+      'font-family': 'var(--font-family)',
+    }}>Content</div></ScaledRepitition>
+    <ScaledRepitition limit={5}><div style={{
+      'font-family': 'var(--font-mono)',
+    }}>Mono</div></ScaledRepitition>
     <h2>Layout</h2>
 
     <Row>
@@ -49,9 +87,11 @@ export const UIElements = () => (
       <ButtonRepetition buttonProps={{ class: 'icon' }}>
         <iconify-icon icon="ph:gift-duotone" />
       </ButtonRepetition>
-      <ButtonRepetition buttonProps={{ class: 'icon rounded' }}>
-        <iconify-icon icon="ph:heart-duotone" />
-      </ButtonRepetition>
+      <ScaledRepitition>
+        <Button class="icon secondary rounded">
+          <iconify-icon icon="ph:heart-duotone" />
+        </Button>
+      </ScaledRepitition>
       <br />
       <p>Buttons with icon text and Rounded Edges</p>
       <ButtonRepetition buttonProps={{ class: 'rounded' }}>
@@ -62,6 +102,9 @@ export const UIElements = () => (
         <iconify-icon icon="ph:play-duotone" />
         Play
       </ButtonRepetition>
+      <ScaledRepitition>
+        <Button class="rounded secondary"> <iconify-icon icon="ph:resize-duotone" /> Resize </Button>
+      </ScaledRepitition>
     </Column>
 
     <h2>Inputs</h2>
@@ -74,6 +117,12 @@ export const UIElements = () => (
         Password
         <Input type="password" placeholder="HardNut2CrakersExtremely" />
       </Label>
+      <ScaledRepitition>
+        <Label>
+          Email
+          <Input type="text" value={inpValue()} onInput={(e) => setInpValue(e.currentTarget.value)} />
+        </Label>
+      </ScaledRepitition>
 
       <RangeInput
         label="Range"
@@ -83,32 +132,33 @@ export const UIElements = () => (
         onChange={(e) => setValue(parseInt(e.currentTarget.value, 10))}
         step={1}
       />
+
+      <ScaledRepitition limit={8}>
+        <RangeInput
+          label="Deranged"
+          min={0}
+          max={100}
+          value={value()}
+          onChange={(e) => setValue(parseInt(e.currentTarget.value, 10))}
+          step={1}
+        />
+      </ScaledRepitition>
     </Column>
 
     <h2>Cards</h2>
     <Card>
-      <p>Card</p>
-    </Card>
-    <Card>
-      <p>Notice how the borders round</p>
-      <Card>
-        <p>Card in card</p>
-      </Card>
-    </Card>
-    <Card>
       <h3>Card</h3>
-      <p>
-        This is a card element. It has a background.
-      </p>
+      <p>Card is a nice surface to make stuff off of.</p>
+    </Card>
+    <ScaledRepitition>
       <Card>
-        <h4>Card</h4>
-        <p>This has been implemented to only a depth of 3.</p>
         <Card>
-          <h5>Card</h5>
-          <p>You have bigger problems if you need 4.</p>
+          <Card>
+            <p>Card</p>
+          </Card>
         </Card>
       </Card>
-    </Card>
+    </ScaledRepitition>
   </Column>
 )
 

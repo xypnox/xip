@@ -1,27 +1,6 @@
 import { ComponentProps } from "solid-js";
 import { styled } from "solid-styled-components";
-import { Button, Column, Row, Input, Label } from "xip-ui";
-
-const Card = styled(Column)`
-  padding: 1em;
-  gap: 0.5em;
-  background: var(--surface-0);
-  color: var(--text);
-  border-radius: 0.5em;
-
-  &:has(&) {
-    border-radius: calc(2 * 0.5em);
-  }
-  &:has(&:has(&)) {
-    border-radius: calc(4 * 0.5em);
-  }
-  & > & {
-    background: var(--surface-1);
-  }
-  & > & > & {
-    background: var(--surface-2);
-  }
-`
+import { Button, Column, Row, Input, Label, Card } from "xip-ui";
 
 const PreviewWrapper = styled(Column)`
   display: flex;
