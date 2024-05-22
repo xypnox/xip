@@ -1,6 +1,6 @@
 import { ComponentProps } from "solid-js";
 import { styled } from "solid-styled-components";
-import { Button, Column, Row, Input, Label, Card } from "xip-ui";
+import { Button, Column, Row, Input, Label, LabelText, Card } from "xip-ui";
 
 const PreviewWrapper = styled(Column)`
   display: flex;
@@ -29,11 +29,11 @@ const ThemePreview = (props: ThemePreviewProps) => {
     <h3>{props.class}</h3>
     <Column>
       <Label>
-        Email
+        <LabelText>Email</LabelText>
         <Input type="text" placeholder="designer@web.com" />
       </Label>
       <Label>
-        Password
+        <LabelText>Password</LabelText>
         <Input type="password" placeholder="HardNut2CrakersExtremely" />
       </Label>
     </Column>

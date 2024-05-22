@@ -1,4 +1,4 @@
-import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow } from "xip-ui";
+import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText } from "xip-ui";
 import { styled } from 'solid-styled-components';
 import { createSignal, type ComponentProps, type ParentProps } from "solid-js";
 
@@ -21,12 +21,13 @@ const ScaledRepitition = (props: ParentProps & {
     <Row style={{
       'align-items': props.column ? 'flex-start' : 'center',
       'flex-direction': props.column ? 'column' : 'row',
+      'gap': '1em',
     }} {...props}>
       {[-2, -1, 0, 1, 2, 3, 4, 5]
         .slice(0, props.limit ?? 5)
         .reverse()
         .map((step) => (
-          <div style={{ 'font-size': `var(--font-size-${step})`, "margin": '0.25em 0' }}>
+          <div style={{ 'font-size': `var(--font-size-${step})`, "margin": '0.25em 0', "max-width": "100%" }}>
             {props.showSize ? `--font-size-${step}` : props.children}
           </div>
         ))}
@@ -87,7 +88,7 @@ export const UIElements = () => (
       <ButtonRepetition buttonProps={{ class: 'icon' }}>
         <iconify-icon icon="ph:gift-duotone" />
       </ButtonRepetition>
-      <ScaledRepitition>
+      <ScaledRepitition limit={8}>
         <Button class="icon secondary rounded">
           <iconify-icon icon="ph:heart-duotone" />
         </Button>
@@ -103,23 +104,39 @@ export const UIElements = () => (
         Play
       </ButtonRepetition>
       <ScaledRepitition>
-        <Button class="rounded secondary"> <iconify-icon icon="ph:resize-duotone" /> Resize </Button>
+        <Button class="rounded"> <iconify-icon icon="ph:resize-duotone" /> Resize </Button>
       </ScaledRepitition>
     </Column>
 
     <h2>Inputs</h2>
     <Column>
+      <Input type="text" value="text" />
+      <Row style={{ "align-items": "flex-end" }}>
+        <Label>
+          <LabelText>Email</LabelText>
+          <Input type="text" placeholder="designer@web.com" />
+        </Label>
+        <Label>
+          <LabelText>Username</LabelText>
+          <IconInput class="left">
+            <iconify-icon icon="ph:at-duotone" />
+            <Input type="text" placeholder="xypnox" />
+          </IconInput>
+        </Label>
+      </Row>
       <Label>
-        Email
-        <Input type="text" placeholder="designer@web.com" />
-      </Label>
-      <Label>
-        Password
+        <LabelText>Password</LabelText>
         <Input type="password" placeholder="HardNut2CrakersExtremely" />
       </Label>
       <ScaledRepitition>
+        <IconInput class="left">
+          <iconify-icon icon="ph:tree" />
+          <Input type="text" placeholder="Sycamore" class="rounded" />
+        </IconInput>
+      </ScaledRepitition>
+      <ScaledRepitition>
         <Label>
-          Email
+          <LabelText>Input</LabelText>
           <Input type="text" value={inpValue()} onInput={(e) => setInpValue(e.currentTarget.value)} />
         </Label>
       </ScaledRepitition>
@@ -133,7 +150,7 @@ export const UIElements = () => (
         step={1}
       />
 
-      <ScaledRepitition limit={8}>
+      <ScaledRepitition>
         <RangeInput
           label="Deranged"
           min={0}

@@ -107,17 +107,57 @@ const Input = styled('input')`
   color: var(--text);
   outline: none;
 
+  &.rounded {
+    padding: 0.5em 1em;
+    border-radius: 2em;
+  }
+
   &:focus {
     border-color: var(--primary-b);
   }
 `
 
+const IconInput = styled(Row)`
+  position: relative;
+  max-width: 100%;
+  &.left {
+    ${Input.class} {
+      padding-left: 2.25em;
+      max-width: 100%;
+    }
+    iconify-icon {
+      position: absolute;
+      top: 0.5em;
+      font-size: 1.25em;
+      left: 0.5em;
+      pointer-events: none;
+      color: var(--textS-0);
+    }
+    ${Input.class}.rounded {
+      padding-left: 2.5em;
+    }
+    &:has(${Input.class}.rounded) {
+      iconify-icon {
+        left: 0.75em;
+      }
+    }
+    &:focus-within {
+      iconify-icon {
+        color: var(--primary-b);
+      }
+    }
+  }
+`
+
 const Label = styled('label')`
   font-family: inherit;
-  font-size: 0.9em;
   display: flex;
   flex-direction: column;
   gap: 0.25em;
+`
+
+const LabelText = styled('div')`
+  font-size: 0.9em;
 `
 
 const Card = styled(Column)`
@@ -314,7 +354,7 @@ export const RangeInput = (props: RangeInputProps) => {
   return (
     <InputWrapper>
       <LabelRow>
-        <Label>{props.label}</Label>
+        <LabelText>{props.label}</LabelText>
         <Show when={props.showValue !== false}>
           <Value>{props.value}</Value>
         </Show>
@@ -338,4 +378,4 @@ export const RangeInput = (props: RangeInputProps) => {
   );
 }
 
-export { Row, Column, Button, Input, Label, baseElementStyles, Card }
+export { Row, Column, Button, Input, LabelText, IconInput, Label, baseElementStyles, Card }

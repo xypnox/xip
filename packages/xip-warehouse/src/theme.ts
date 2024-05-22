@@ -52,7 +52,7 @@ const modeFn = (m: Vars, md: 'light' | 'dark') => ({
   primary: getUIColor(m.primary, md),
   secondary: getUIColor(shiftLCH(m.primary, { hue: 120 }), md),
   tertiary: getUIColor(shiftLCH(m.primary, { hue: -120 }), md),
-  'textS': getShades(m.text, [1, 1], { lightness: md === 'light' ? -10 : 10 }),
+  textS: getShades(m.text, [2, 2], { lightness: md === 'light' ? -6 : 6 }),
   border: shiftLCH(m.text, { lightness: md === 'light' ? 58 : -50, chroma: -0.02 }),
   primaryLight: shiftLCH(m.primary, { lightness: md === 'light' ? 10 : -10, chroma: -0.08 }),
   // Remove the first element

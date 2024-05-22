@@ -43,8 +43,7 @@ const modeFn = (m: Vars, md: 'light' | 'dark') => ({
   ...m,
   primary: shade(m.primary, 6, md),
   primaryOver: invertLightness(m.primary),
-  secondary: shade(
-    shiftLCH(m.primary, { hue: 120 }), 5, md),
+  secondary: shade(shiftLCH(m.primary, { hue: 120 }), 5, md),
   tertiary: shade(shiftLCH(m.primary, { hue: -120 }), 5, md),
   border: shiftLCH(m.text, { lightness: md === 'light' ? 60 : -50 }),
   primaryLight: shiftLCH(m.primary, { lightness: md === 'light' ? 10 : -10, chroma: -0.08 }),
