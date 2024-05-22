@@ -15,8 +15,8 @@ const base = {
 const vars = {
   light: {
     primary: 'oklch(50% 0.15 250)', //'oklch(55.5% 0.15 220)',
-    background: 'oklch(88% 0.015 220)',
-    text: 'oklch(25% 0.05 240)',
+    background: 'oklch(88.5% 0.015 220)',
+    text: 'oklch(25% 0.05 250)',
   },
   dark: {
     primary: 'oklch(65% 0.15 250)',
