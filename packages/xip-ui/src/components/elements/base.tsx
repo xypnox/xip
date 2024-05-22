@@ -57,11 +57,10 @@ const Button = styled('button')`
   background-color: var(--surface-0);
 
   iconify-icon {
+    display: inline-block;
     font-size: 1.2em;
-    svg {
-      width: 1.2em;
-      height: 1.2em;
-    }
+    width: 1.2em;
+    height: 1.2em;
   }
   
   &:hover {
@@ -131,13 +130,14 @@ const IconInput = styled(Row)`
     }
     iconify-icon {
       position: absolute;
+      display: inline-block;
+
       top: 0.5em;
       left: 0.5em;
+
       font-size: 1.25em;
-      svg {
-        width: 1.25em;
-        height: 1.25em;
-      }
+      width: 1.25em;
+      height: 1.25em;
       pointer-events: none;
       color: var(--textS-0);
     }
