@@ -2,40 +2,37 @@ import { styled } from 'solid-styled-components';
 import { onMount, Show, type JSX } from "solid-js";
 import { LabelText } from './base';
 
+const thumbCss = `
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1em; 
+  width: 1em; 
+
+  background: var(--text);
+  border-radius: 50%;
+
+  cursor: pointer; 
+  transition: all ease-in-out .2s;
+  outline: 0.125em solid transparent;
+  outline-offset: 0.125em;
+`
 
 const RangeInputEl = styled("input")`
+  appearance: none;
   width: 100%; 
-  height: 1.75em; 
+  height: 1.5em; 
   margin: 0; 
   background: transparent;
   outline: none; 
   z-index: 4;
   font-size: 1em;
 
-  &::-moz-range-thumb {
-    height: 1em; 
-    width: 1em; 
-    background: var(--text);
-    border-radius: 50%;
-    border: 0.2em solid var(--surface-2);
-    cursor: pointer; 
-    transition: all ease-in-out .2s;
-    outline: 0.125em solid transparent;
-  }
-
   &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background: var(--text);
-    height: 1em; 
-    width: 1em; 
-    background: var(--text);
-    border-radius: 50%;
-    border: 0.2em solid var(--background);
-    cursor: pointer; 
-    transition: all ease-in-out .2s;
-    outline: 0.125em solid transparent;
+    ${thumbCss}
   }
-
+  &::-moz-range-thumb {
+    ${thumbCss}
+  }
 
   &:hover {
     &::-moz-range-thumb {
@@ -46,7 +43,7 @@ const RangeInputEl = styled("input")`
       background: var(--primary-b);
     }
   }
-  &:focus-within {
+  &:focus {
     &::-moz-range-thumb {
       outline: 0.125em solid var(--primary-b);
       background: var(--primary-b);
@@ -89,7 +86,7 @@ const SliderBar = styled("div")`
   width: 100%;
   height: 1em;
   background: var(--surface-0);
-  bottom: 0.4em;
+  bottom: 0.25em;
   transition: width 0s ease, background 0.2s ease;
   pointer-events: none;
   border-radius: 0.5em;
@@ -98,12 +95,12 @@ const SliderBar = styled("div")`
 
 const ValueBar = styled("div")`
   position: absolute;
-  width: calc(var(--width, 0%) - 0.4em);
+  width: calc(var(--width, 0) / 100 * calc(100% - 0.75em));
   height: 0.5em;
   background: var(--text);
   opacity: 0.5;
-  bottom: 0.65em;
-  left: 0.25em;
+  bottom: 0.5em;
+  margin: 0 0.275em;
   transition: width 0s ease, background 0.2s ease;
   pointer-events: none;
   border-radius: 0.25em;
@@ -164,7 +161,7 @@ export const RangeInput = (props: RangeInputProps) => {
       <SliderBar />
       <ValueBar
         style={{
-          "--width": `${((props.value - props.min) / (props.max - props.min)) * 100}%`,
+          "--width": `${((props.value - props.min) / (props.max - props.min)) * 100}`,
         }}
       />
       <RangeInputEl

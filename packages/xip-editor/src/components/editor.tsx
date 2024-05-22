@@ -30,11 +30,11 @@ const ThemePreview = (props: ThemePreviewProps) => {
     <Column>
       <Label>
         <LabelText>Email</LabelText>
-        <Input type="text" />
+        <Input name="email" type="text" autocomplete="true" />
       </Label>
       <Label>
         <LabelText>Password</LabelText>
-        <Input type="password" />
+        <Input name="password" type="password" autocomplete="true" />
       </Label>
     </Column>
     <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>

@@ -1,6 +1,6 @@
 import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText } from "xip-ui";
 import { styled } from 'solid-styled-components';
-import { createSignal, type ComponentProps, type ParentProps } from "solid-js";
+import { createSignal, type ComponentProps, type ParentProps, For } from "solid-js";
 
 const Row = styled(UIRow)`
   gap: 1em;
@@ -85,11 +85,11 @@ export const UIElements = () => (
       <ButtonRepetition buttonProps={{ class: 'rounded' }}>Button</ButtonRepetition>
       <br />
       <p>Buttons with icons</p>
-      <ButtonRepetition buttonProps={{ class: 'icon' }}>
+      <ButtonRepetition buttonProps={{ class: 'icon', title: 'A gift is here' }}>
         <iconify-icon icon="ph:gift-duotone" />
       </ButtonRepetition>
       <ScaledRepitition limit={8}>
-        <Button class="icon secondary rounded">
+        <Button class="icon secondary rounded" title="We all love interfaces">
           <iconify-icon icon="ph:heart-duotone" />
         </Button>
       </ScaledRepitition>
@@ -110,34 +110,34 @@ export const UIElements = () => (
 
     <h2>Inputs</h2>
     <Column>
-      <Input type="text" value="text" />
+      <Input type="text" value="text" name="text" />
       <Row style={{ "align-items": "flex-end" }}>
         <Label>
           <LabelText>Email</LabelText>
-          <Input type="text" />
+          <Input name="email" type="text" autocomplete="true" />
         </Label>
         <Label>
           <LabelText>Username</LabelText>
           <IconInput class="left">
             <iconify-icon icon="ph:at-duotone" />
-            <Input type="text" />
+            <Input name="username" type="text" autocomplete="true" />
           </IconInput>
         </Label>
       </Row>
       <Label>
         <LabelText>Password</LabelText>
-        <Input type="password" />
+        <Input type="password" name="password" />
       </Label>
       <ScaledRepitition>
         <IconInput class="left">
           <iconify-icon icon="ph:tree" />
-          <Input type="text" placeholder="Sycamore" class="rounded" />
+          <Input name="search" type="text" placeholder="Sycamore" class="rounded" />
         </IconInput>
       </ScaledRepitition>
       <ScaledRepitition>
         <Label>
           <LabelText>Input</LabelText>
-          <Input type="text" value={inpValue()} onInput={(e) => setInpValue(e.currentTarget.value)} />
+          <Input name="input-scaled" type="text" value={inpValue()} onInput={(e) => setInpValue(e.currentTarget.value)} />
         </Label>
       </ScaledRepitition>
 
@@ -149,8 +149,20 @@ export const UIElements = () => (
         onChange={(e) => setValue(parseInt(e.currentTarget.value, 10))}
         step={1}
       />
+      <For each={[0, 1, 2, 5, 7, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}>
+        {(value) => (
+          <RangeInput
+            label="Range"
+            min={0}
+            max={100}
+            value={value}
+            onChange={(e) => console.log(e.currentTarget.value)}
+            step={1}
+          />
+        )}
+      </For>
 
-      <ScaledRepitition>
+      <ScaledRepitition limit={8}>
         <RangeInput
           label="Deranged"
           min={0}
