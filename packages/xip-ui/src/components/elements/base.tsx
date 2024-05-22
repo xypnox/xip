@@ -58,6 +58,8 @@ const Button = styled('button')`
 
   iconify-icon {
     font-size: 1.2em;
+    width: 1.2em;
+    height: 1.2em;
   }
   
   &:hover {
@@ -129,6 +131,8 @@ const IconInput = styled(Row)`
       position: absolute;
       top: 0.5em;
       font-size: 1.25em;
+      width: 1.25em;
+      height: 1.25em;
       left: 0.5em;
       pointer-events: none;
       color: var(--textS-0);
