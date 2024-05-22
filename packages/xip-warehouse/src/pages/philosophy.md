@@ -3,7 +3,7 @@ layout: '../layouts/Layout.astro'
 title: 'Philosophies'
 ---
 
-# Philosophies
+<h1 class="title">Philosophies</h1>
 
 What is lacking, what is being offered, and how much does it hurt
 
