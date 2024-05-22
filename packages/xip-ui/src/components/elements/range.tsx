@@ -15,6 +15,7 @@ const thumbCss = `
   transition: all ease-in-out .2s;
   outline: 0.125em solid transparent;
   outline-offset: 0.125em;
+  border: none;
 `
 
 const RangeInputEl = styled("input")`
