@@ -114,19 +114,19 @@ export const UIElements = () => (
       <Row style={{ "align-items": "flex-end" }}>
         <Label>
           <LabelText>Email</LabelText>
-          <Input type="text" placeholder="designer@web.com" />
+          <Input type="text" />
         </Label>
         <Label>
           <LabelText>Username</LabelText>
           <IconInput class="left">
             <iconify-icon icon="ph:at-duotone" />
-            <Input type="text" placeholder="xypnox" />
+            <Input type="text" />
           </IconInput>
         </Label>
       </Row>
       <Label>
         <LabelText>Password</LabelText>
-        <Input type="password" placeholder="HardNut2CrakersExtremely" />
+        <Input type="password" />
       </Label>
       <ScaledRepitition>
         <IconInput class="left">

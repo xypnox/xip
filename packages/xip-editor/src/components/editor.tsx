@@ -30,11 +30,11 @@ const ThemePreview = (props: ThemePreviewProps) => {
     <Column>
       <Label>
         <LabelText>Email</LabelText>
-        <Input type="text" placeholder="designer@web.com" />
+        <Input type="text" />
       </Label>
       <Label>
         <LabelText>Password</LabelText>
-        <Input type="password" placeholder="HardNut2CrakersExtremely" />
+        <Input type="password" />
       </Label>
     </Column>
     <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
