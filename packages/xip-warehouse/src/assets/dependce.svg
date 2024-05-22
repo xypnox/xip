@@ -2,9 +2,9 @@
   <style>
     svg {
     --color-text: var(--text);
-    --color-accent1: var(--tertiary-s-4);
-    --color-accent2: var(--primary-s-4);
-    --color-accent3: var(--secondary-s-4);
+    --color-accent1: var(--tertiary-s-5);
+    --color-accent2: var(--primary-s-5);
+    --color-accent3: var(--secondary-s-5);
     }
     .text {
     fill: var(--color-text);

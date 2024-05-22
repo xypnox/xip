@@ -96,7 +96,7 @@ import StyleLoader from '../components/styleLoader.astro';
     line-height: 1.5;
 	}
   a {
-    color: var(--primary-5);
+    color: var(--primary-s-4);
   }
   h1.title {
     font-size: var(--font-size-5);
@@ -172,6 +172,14 @@ import StyleLoader from '../components/styleLoader.astro';
       padding-left: 1em;
       li {
         margin-bottom: 0.5em;
+        p {
+          margin: 0;
+        }
+      }
+      &.long {
+        li {
+          margin-bottom: 1em;
+        }
       }
     }
   }

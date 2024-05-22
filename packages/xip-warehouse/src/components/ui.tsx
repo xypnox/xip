@@ -110,7 +110,6 @@ export const UIElements = () => (
 
     <h2>Inputs</h2>
     <Column>
-      <Input type="text" value="text" name="text" />
       <Row style={{ "align-items": "flex-end" }}>
         <Label>
           <LabelText>Email</LabelText>
