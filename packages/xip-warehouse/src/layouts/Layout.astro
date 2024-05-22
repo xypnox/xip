@@ -28,7 +28,7 @@ import StyleLoader from '../components/styleLoader.astro';
     </script>
     <StyleLoader />
 	</head>
-	<body >
+	<body>
     <div class="body-contents">
       <Nav />
       <main>
@@ -58,8 +58,8 @@ import StyleLoader from '../components/styleLoader.astro';
     margin: 0;
 	}
   body {
-		background: var(--background);
-    color: var(--text);
+		background: var(--background, #fff);
+    color: var(--text, #000);
     margin: 0;
     padding: 0;
   }
@@ -150,12 +150,12 @@ import StyleLoader from '../components/styleLoader.astro';
     padding-top: 1em;
     border-top: 1px solid var(--border);
     padding: 1em;
-    opacity: 0.8;
+    color: var(--textS-0);
     p {
       margin: 0;
       font-size: var(--font-size--1);
       a {
-        color: var(--primary-s-3);
+        color: var(--primary-s-4);
       }
     }
   }
