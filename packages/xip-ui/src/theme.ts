@@ -5,9 +5,9 @@ const base = {
     width: '1400px',
   },
   font: {
-    family: '\"Inter\", sans-serif',
-    heading: '\"Source Serif 4\", serif',
-    mono: '\"Fira Mono\", monospace',
+    family: 'sans-serif',
+    heading: 'serif',
+    mono: 'monospace',
     size: typeScale({}),
   }
 }
