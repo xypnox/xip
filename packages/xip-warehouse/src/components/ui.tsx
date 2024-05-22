@@ -149,18 +149,6 @@ export const UIElements = () => (
         onChange={(e) => setValue(parseInt(e.currentTarget.value, 10))}
         step={1}
       />
-      <For each={[0, 1, 2, 5, 7, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}>
-        {(value) => (
-          <RangeInput
-            label="Range"
-            min={0}
-            max={100}
-            value={value}
-            onChange={(e) => console.log(e.currentTarget.value)}
-            step={1}
-          />
-        )}
-      </For>
 
       <ScaledRepitition limit={8}>
         <RangeInput

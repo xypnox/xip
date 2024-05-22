@@ -52,7 +52,7 @@ const Button = styled('button')`
 
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   transition-timing-function: ease-in-out;
-  color: var(--primary-b);
+  color: var(--primary-s-3);
   border-color: var(--border);
   background-color: var(--surface-0);
 

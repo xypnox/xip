@@ -1,4 +1,4 @@
-import { cssConverter, generateTheme, getShades, typeScale, shiftLCH, invertLightness } from 'themescura'
+import { cssConverter, generateTheme, getShades, typeScale, shiftLCH } from 'themescura'
 
 const base = {
   layout: {
@@ -33,7 +33,7 @@ const shade = (color: string, lightness: number, len: number = 5) => getShades(
   [len, len],
   { lightness })
 
-const overlay = (color: string, md: 'light' | 'dark') => shiftLCH(color, { lightness: md === 'light' ? 35 : -35, chroma: -0.1 })
+const overlay = (color: string, md: 'light' | 'dark') => shiftLCH(color, { lightness: md === 'light' ? 45 : -45, chroma: -0.1 })
 
 
 const getUIColor = (color: string, md: 'light' | 'dark') => {

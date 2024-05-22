@@ -108,7 +108,7 @@ const ValueBar = styled("div")`
   z-index: 2;
 `
 
-const InputWrapper = styled("div")`
+const InputWrapper = styled("label")`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -119,7 +119,7 @@ const InputWrapper = styled("div")`
       color: var(--primary-b);
     }
   }
-  &:has(${RangeInputEl.class}:hover) {
+  &:has(${(RangeInputEl as any).class}:hover) {
     ${ValueBar.class} {
       background: var(--primary-b);
     }
