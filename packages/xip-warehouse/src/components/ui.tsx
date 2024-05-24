@@ -1,6 +1,6 @@
-import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText } from "xip-ui";
+import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText, SwitchInp } from "xip-ui";
 import { styled } from 'solid-styled-components';
-import { createSignal, type ComponentProps, type ParentProps, For } from "solid-js";
+import { createSignal, type ComponentProps, type ParentProps, For, Switch } from "solid-js";
 
 const Row = styled(UIRow)`
   gap: 1em;
@@ -140,6 +140,8 @@ export const UIElements = () => (
         </Label>
       </ScaledRepitition>
 
+      <h3>Range Inputs</h3>
+
       <RangeInput
         label="Range"
         min={0}
@@ -159,6 +161,21 @@ export const UIElements = () => (
           step={1}
         />
       </ScaledRepitition>
+
+
+      <h3>Checkboxes and Switches</h3>
+
+      <Row>
+        <SwitchInp checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+        <SwitchInp class="primary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+        <SwitchInp class="secondary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+        <SwitchInp class="tertiary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+      </Row>
+
+      <ScaledRepitition>
+        <SwitchInp checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Chex" />
+      </ScaledRepitition>
+
     </Column>
 
     <h2>Cards</h2>

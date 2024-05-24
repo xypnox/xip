@@ -1,6 +1,6 @@
 import { ComponentProps } from "solid-js";
 import { styled } from "solid-styled-components";
-import { Button, Column, Row, Input, Label, LabelText, Card } from "xip-ui";
+import { Button, Column, Row, Input, Label, LabelText, Card, SwitchInp } from "xip-ui";
 
 const PreviewWrapper = styled(Column)`
   display: flex;
@@ -36,6 +36,7 @@ const ThemePreview = (props: ThemePreviewProps) => {
         <LabelText>Password</LabelText>
         <Input name="password" type="password" autocomplete="true" />
       </Label>
+      <SwitchInp label="Remember Me" checked onChange={() => { }} />
     </Column>
     <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <Button class="primary">Primary</Button>
