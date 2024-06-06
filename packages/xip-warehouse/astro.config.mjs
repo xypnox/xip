@@ -1,8 +1,20 @@
 import { defineConfig } from 'astro/config';
 
 import solidJs from "@astrojs/solid-js";
+import solidStyled from 'unplugin-solid-styled';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs()]
+  integrations: [solidJs()],
+  vite: {
+    plugins: [
+      solidStyled.vite({
+        prefix: 'example',
+        filter: {
+          include: 'src/**/*.tsx',
+          exclude: 'node_modules/**/*.{ts,js}',
+        },
+      }),
+    ],
+  },
 });

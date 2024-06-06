@@ -64,21 +64,6 @@ export type BaseTheme<T extends Theme<any, any>> = T['base']
  * Generate a theme from a palette
  * @param palette
  * @param baseFn
- * @param modeFn
- * The baseFn and modeFn are functions convert their respective parts of the palette
- */
-// export declare const generateTheme: <
-//   BFn extends Fn,
-//   MFn extends Fn,
-//   T extends ThemeFn<BFn, MFn>
-// >(
-//   palette: PaletteFn<BFn, MFn>,
-//   baseFn: BFn,
-//   modeFn: MFn) => T;
-/**
- * Generate a theme from a palette
- * @param palette
- * @param baseFn
  * @param modeFn 
  * The baseFn and modeFn are functions convert their respective parts of the palette
  */
@@ -102,6 +87,7 @@ export const generateTheme =
       }
     } as T
   }
+
 
 /**
  * Final css should be

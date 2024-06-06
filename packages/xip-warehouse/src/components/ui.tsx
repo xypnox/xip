@@ -1,4 +1,4 @@
-import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText, SwitchInp } from "xip-ui";
+import { Button, Button2, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText, SwitchInp } from "xip-ui";
 import { styled } from 'solid-styled-components';
 import { createSignal, type ComponentProps, type ParentProps, For, Switch } from "solid-js";
 
@@ -48,6 +48,16 @@ const ButtonRepetition = (props: RepProps) => (
     <Button {...props.buttonProps} class={`tertiary ${props.buttonProps?.class}`}>{props.children}</Button>
   </Row>
 )
+const ButtonRepetition2 = (props: RepProps) => (
+  <Row>
+    <Button2 {...props.buttonProps}>{props.children}</Button2>
+    <Button2 disabled {...props.buttonProps}>{props.children}</Button2>
+    <Button2 {...props.buttonProps} class={`primary ${props.buttonProps?.class}`}>{props.children}</Button2>
+    <Button2 {...props.buttonProps} class={`secondary ${props.buttonProps?.class}`}>{props.children}</Button2>
+    <Button2 {...props.buttonProps} class={`tertiary ${props.buttonProps?.class}`}>{props.children}</Button2>
+  </Row>
+)
+
 
 const [value, setValue] = createSignal(50);
 const [inpValue, setInpValue] = createSignal('designer@developer.cool');
@@ -108,6 +118,37 @@ export const UIElements = () => (
       </ScaledRepitition>
     </Column>
 
+    <h2>Buttons Via Styled</h2>
+    <Column>
+      <p>Classic Buttons</p>
+      <ButtonRepetition2>Button</ButtonRepetition2>
+      <ButtonRepetition2 buttonProps={{ class: 'rounded' }}>Button</ButtonRepetition2>
+      <br />
+      <p>Buttons with icons</p>
+      <ButtonRepetition2 buttonProps={{ class: 'icon', title: 'A gift is here' }}>
+        <iconify-icon icon="ph:gift-duotone" />
+      </ButtonRepetition2>
+      <ScaledRepitition limit={8}>
+        <Button2 class="icon secondary rounded" title="We all love interfaces">
+          <iconify-icon icon="ph:heart-duotone" />
+        </Button2>
+      </ScaledRepitition>
+      <br />
+      <p>Buttons with icon text and Rounded Edges</p>
+      <ButtonRepetition2 buttonProps={{ class: 'rounded' }}>
+        <iconify-icon icon="ph:play-duotone" />
+        Play
+      </ButtonRepetition2>
+      <ButtonRepetition2 buttonProps={{}}>
+        <iconify-icon icon="ph:play-duotone" />
+        Play
+      </ButtonRepetition2>
+      <ScaledRepitition>
+        <Button2 class="rounded"> <iconify-icon icon="ph:resize-duotone" /> Resize </Button2>
+      </ScaledRepitition>
+    </Column>
+
+
     <h2>Inputs</h2>
     <Column>
       <Row style={{ "align-items": "flex-end" }}>
@@ -136,7 +177,7 @@ export const UIElements = () => (
       <ScaledRepitition>
         <Label>
           <LabelText>Input</LabelText>
-          <Input name="input-scaled" type="text" value={inpValue()} onInput={(e) => setInpValue(e.currentTarget.value)} />
+          <Input name="input-scaled" type="text" value={inpValue()} onInput={(e: any) => setInpValue(e.currentTarget.value)} />
         </Label>
       </ScaledRepitition>
 
@@ -147,7 +188,7 @@ export const UIElements = () => (
         min={0}
         max={100}
         value={value()}
-        onChange={(e) => setValue(parseInt(e.currentTarget.value, 10))}
+        onChange={(e: any) => setValue(parseInt(e.currentTarget.value, 10))}
         step={1}
       />
 
@@ -157,7 +198,7 @@ export const UIElements = () => (
           min={0}
           max={100}
           value={value()}
-          onChange={(e) => setValue(parseInt(e.currentTarget.value, 10))}
+          onChange={(e: any) => setValue(parseInt(e.currentTarget.value, 10))}
           step={1}
         />
       </ScaledRepitition>
@@ -166,14 +207,14 @@ export const UIElements = () => (
       <h3>Checkboxes and Switches</h3>
 
       <Row>
-        <SwitchInp checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
-        <SwitchInp class="primary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
-        <SwitchInp class="secondary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
-        <SwitchInp class="tertiary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+        <SwitchInp checked={true} onChange={(e: any) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+        <SwitchInp class="primary" checked={true} onChange={(e: any) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+        <SwitchInp class="secondary" checked={true} onChange={(e: any) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
+        <SwitchInp class="tertiary" checked={true} onChange={(e: any) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
       </Row>
 
       <ScaledRepitition>
-        <SwitchInp checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Chex" />
+        <SwitchInp checked={true} onChange={(e: any) => console.log('changed', e.currentTarget.checked)} label="Chex" />
       </ScaledRepitition>
 
     </Column>
