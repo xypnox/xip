@@ -1,27 +1,32 @@
-import { ComponentProps } from "solid-js";
-import { styled } from "solid-styled-components";
+import { ComponentProps, JSX } from "solid-js";
 import { Button, Column, Row, Input, Label, LabelText, Card, SwitchInp } from "xip-ui";
+import { css } from "solid-styled";
 
-const PreviewWrapper = styled(Column)`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 1em;
-  gap: 2em;
-  background: var(--background);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 1.5em;
-  h3, h4, h5, p {
-    margin: 0;
-  }
-  ${Column.class} {
-    gap: 1em;
-  }
-  ${Card.class} {
-    gap: 0.5em;
-  }
-`
+const PreviewWrapper = (props: JSX.HTMLAttributes<HTMLDivElement>) => {
+  css`
+    div {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1em;
+      gap: 2em;
+      background: var(--background);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 1.5em;
+      h3, h4, h5, p {
+        margin: 0;
+      }
+      & {
+        gap: 1em;
+      }
+      div.card {
+        gap: 0.5em;
+      }
+    }
+  `
+  return <div {...props} />
+}
 
 interface ThemePreviewProps extends ComponentProps<'div'> { }
 const ThemePreview = (props: ThemePreviewProps) => {
@@ -74,13 +79,18 @@ const ThemePreview = (props: ThemePreviewProps) => {
 
 }
 
-const PreviewRow = styled(Row)`
-  width: 100%;
-  gap: 1em;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`
+const PreviewRow = (props: JSX.HTMLAttributes<HTMLDivElement>) => {
+  css`
+    div.row {
+      width: 100%;
+      gap: 1em;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  `
+  return <Row {...props} />
+}
 
 export const ThemePreviews = () => (
   <PreviewRow style={{ gap: '1em' }}>

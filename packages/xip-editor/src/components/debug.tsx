@@ -1,6 +1,6 @@
-import { createMemo, Show, Switch, Match, For } from 'solid-js';
+import { createMemo, Show, Switch, Match, For, JSX } from 'solid-js';
+import { css } from 'solid-styled';
 import type { Fn, ThemeFn, PaletteFn } from 'themescura';
-import { styled } from 'solid-styled-components';
 import { Column as UIColumn } from 'xip-ui';
 
 interface Props<B extends Fn, M extends Fn> {
@@ -8,56 +8,113 @@ interface Props<B extends Fn, M extends Fn> {
   palette: PaletteFn<B, M>
 }
 
-const Row = styled('div')`
-  display: flex;
-  gap: 1em;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  flex-wrap: wrap;
-  max-width: 100%;
-  padding: 4px;
-  &:hover {
-    box-shadow: inset 0px 0px 0px 1px var(--primaryLight);
-  }
-  &.noshade {
-    padding: 0em;
-    border: none;
-    box-shadow: none;
-  }
-`
+// const Row = styled('div')`
+// `
 
-const Key = styled('div')`
-  font-style: italic;
-  color: var(--primary-3);
-`
-
-const Column = styled(UIColumn)`
-  display: flex;
-  width: max-content;
-  max-width: 100%;
-  flex-direction: column;
-  padding: 4px;
-  box-shadow: inset 0px 0px 0px 1px var(--border);
-`
-
-const ColorPreview = styled('div')`
-  background: var(--color);
-  width: 2rem;
-  height: 2rem;
-`
-
-const Wrapper = styled('div')`
-  position: relative;
-  font-family: var(--font-mono);
-  font-size: var(--font-size--1);
-  max-width: 100%;
-
-  h4 {
-    margin: 0;
+const Row = (props: JSX.HTMLAttributes<HTMLDivElement>) => {
+  css`
+  div {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    max-width: 100%;
     padding: 4px;
+    &:hover {
+      box-shadow: inset 0px 0px 0px 1px var(--primaryLight);
+    }
+    &.noshade {
+      padding: 0em;
+      border: none;
+      box-shadow: none;
+    }
   }
-`
+  `
+  return <div {...props} />
+}
+
+// const Key = styled('div')`
+//   font-style: italic;
+//   color: var(--primary-3);
+// `
+
+const Key = (props: JSX.HTMLAttributes<HTMLDivElement>) => {
+  css`
+  div {
+    font-style: italic;
+    color: var(--primary-3);
+  }
+  `
+  return <div {...props} />
+}
+
+// const Column = styled(UIColumn)`
+//   display: flex;
+//   width: max-content;
+//   max-width: 100%;
+//   flex-direction: column;
+//   padding: 4px;
+//   box-shadow: inset 0px 0px 0px 1px var(--border);
+// `
+
+const Column = (props: JSX.HTMLAttributes<HTMLDivElement>) => {
+  css`
+  div {
+    display: flex;
+    width: max-content;
+    max-width: 100%;
+    flex-direction: column;
+    padding: 4px;
+    box-shadow: inset 0px 0px 0px 1px var(--border);
+  }
+  `
+  return <UIColumn {...props} />
+}
+
+// const ColorPreview = styled('div')`
+//   background: var(--color);
+//   width: 2rem;
+//   height: 2rem;
+// `
+const ColorPreview = (props: JSX.HTMLAttributes<HTMLDivElement>) => {
+  css`
+  div {
+    background: var(--color);
+    width: 2rem;
+    height: 2rem;
+  }
+  `
+  return <div {...props} />
+}
+
+// const Wrapper = styled('div')`
+//   position: relative;
+//   font-family: var(--font-mono);
+//   font-size: var(--font-size--1);
+//   max-width: 100%;
+//   h4 {
+//     margin: 0;
+//     padding: 4px;
+//   }
+// `
+
+const Wrapper = (props: JSX.HTMLAttributes<HTMLDivElement>) => {
+  css`
+  div {
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: var(--font-size--1);
+    max-width: 100%;
+    h4 {
+      margin: 0;
+      padding: 4px;
+    }
+  }
+  `
+  return <div {...props} />
+}
 
 export const ThemeDebug = <B extends Fn, M extends Fn>(props: Props<B, M>) => {
   // console.log('Theme:', props.theme)

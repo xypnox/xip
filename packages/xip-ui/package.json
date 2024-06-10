@@ -49,7 +49,6 @@
   "dependencies": {},
   "peerDependencies": {
     "solid-js": "^1.5.4",
-    "solid-styled-components": "^0.28.5",
     "solid-styled": "^0.11.1",
     "themescura": "workspace:*"
   },
@@ -61,7 +60,6 @@
     "rollup-plugin-solid-styled": "^0.11.1",
     "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.4.2",
-    "typescript": "^4.6.4",
-    "unplugin-solid-styled": "^0.11.1"
+    "typescript": "^4.6.4"
   }
 }

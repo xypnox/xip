@@ -1,15 +1,25 @@
-import { Button, Button2, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText, SwitchInp } from "xip-ui";
-import { styled } from 'solid-styled-components';
-import { createSignal, type ComponentProps, type ParentProps, For, Switch } from "solid-js";
+import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText, SwitchInp } from "xip-ui";
+import { createSignal, type ComponentProps, type ParentProps } from "solid-js";
+import { css } from "solid-styled";
 
-const Row = styled(UIRow)`
-  gap: 1em;
-  flex-wrap: wrap;
-`
+const Row = (props: ComponentProps<typeof UIRow>) => {
+  css`
+    div {
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+  `
+  return <UIRow {...props} />
+}
 
-const Column = styled(UIColumn)`
-  gap: 1em;
-`
+const Column = (props: ComponentProps<typeof UIColumn>) => {
+  css`
+    div {
+      gap: 1em;
+    }
+  `
+  return <UIColumn {...props} />
+}
 
 
 const ScaledRepitition = (props: ParentProps & {
@@ -46,15 +56,6 @@ const ButtonRepetition = (props: RepProps) => (
     <Button {...props.buttonProps} class={`primary ${props.buttonProps?.class}`}>{props.children}</Button>
     <Button {...props.buttonProps} class={`secondary ${props.buttonProps?.class}`}>{props.children}</Button>
     <Button {...props.buttonProps} class={`tertiary ${props.buttonProps?.class}`}>{props.children}</Button>
-  </Row>
-)
-const ButtonRepetition2 = (props: RepProps) => (
-  <Row>
-    <Button2 {...props.buttonProps}>{props.children}</Button2>
-    <Button2 disabled {...props.buttonProps}>{props.children}</Button2>
-    <Button2 {...props.buttonProps} class={`primary ${props.buttonProps?.class}`}>{props.children}</Button2>
-    <Button2 {...props.buttonProps} class={`secondary ${props.buttonProps?.class}`}>{props.children}</Button2>
-    <Button2 {...props.buttonProps} class={`tertiary ${props.buttonProps?.class}`}>{props.children}</Button2>
   </Row>
 )
 
@@ -115,36 +116,6 @@ export const UIElements = () => (
       </ButtonRepetition>
       <ScaledRepitition>
         <Button class="rounded"> <iconify-icon icon="ph:resize-duotone" /> Resize </Button>
-      </ScaledRepitition>
-    </Column>
-
-    <h2>Buttons Via Styled</h2>
-    <Column>
-      <p>Classic Buttons</p>
-      <ButtonRepetition2>Button</ButtonRepetition2>
-      <ButtonRepetition2 buttonProps={{ class: 'rounded' }}>Button</ButtonRepetition2>
-      <br />
-      <p>Buttons with icons</p>
-      <ButtonRepetition2 buttonProps={{ class: 'icon', title: 'A gift is here' }}>
-        <iconify-icon icon="ph:gift-duotone" />
-      </ButtonRepetition2>
-      <ScaledRepitition limit={8}>
-        <Button2 class="icon secondary rounded" title="We all love interfaces">
-          <iconify-icon icon="ph:heart-duotone" />
-        </Button2>
-      </ScaledRepitition>
-      <br />
-      <p>Buttons with icon text and Rounded Edges</p>
-      <ButtonRepetition2 buttonProps={{ class: 'rounded' }}>
-        <iconify-icon icon="ph:play-duotone" />
-        Play
-      </ButtonRepetition2>
-      <ButtonRepetition2 buttonProps={{}}>
-        <iconify-icon icon="ph:play-duotone" />
-        Play
-      </ButtonRepetition2>
-      <ScaledRepitition>
-        <Button2 class="rounded"> <iconify-icon icon="ph:resize-duotone" /> Resize </Button2>
       </ScaledRepitition>
     </Column>
 

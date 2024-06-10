@@ -46,18 +46,18 @@
     "dev": "rollup --watch -c"
   },
   "homepage": "https://github.com/xypnox/xip#readme",
-  "dependencies": {},
   "peerDependencies": {
     "solid-js": "^1.5.4",
+    "solid-styled": "^0.11.1",
     "themescura": "workspace:*",
-    "xip-ui": "workspace:*",
-    "solid-styled-components": "^0.28.5"
+    "xip-ui": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.0",
     "@types/node": "^18.7.16",
     "prettier": "^2.7.1",
     "rollup": "^2.75.7",
+    "rollup-plugin-solid-styled": "^0.11.1",
     "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.4.2",
     "typescript": "^4.6.4"

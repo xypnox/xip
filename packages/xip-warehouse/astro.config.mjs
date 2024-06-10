@@ -9,7 +9,7 @@ export default defineConfig({
   vite: {
     plugins: [
       solidStyled.vite({
-        prefix: 'example',
+        prefix: 'xip',
         filter: {
           include: 'src/**/*.tsx',
           exclude: 'node_modules/**/*.{ts,js}',

@@ -18,7 +18,7 @@ const getLCH = (color: Color) => {
     if (i === 1) val.c = parseFloat(v);
     else val.h = parseFloat(v.replace(')', ''));
   })
-  console.log({ color, val })
+  // console.log({ color, val })
   return val
 }
 
@@ -67,6 +67,6 @@ export const getShades = (color: Color, steps = [2, 2], shift: {
   // insert the original color in the middle
   shades.splice(steps[0], 0, color)
 
-  console.log({ shades })
+  // console.log({ shades })
   return shades
 }
