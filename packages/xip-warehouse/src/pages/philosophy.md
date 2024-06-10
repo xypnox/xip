@@ -12,6 +12,7 @@ What is lacking, what is being offered, and how much does it hurt
 - Interfaces are usable on all screen sizes
 - Interfaces use the space they are given justly
 - Themes change with modes and moods
+- Fast is fast on all devices
 
 Further ideas are being experimented with... 
 
