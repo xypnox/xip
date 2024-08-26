@@ -1,0 +1,26 @@
+.input {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 0.125em solid var(--border);
+  background-color: var(--surface-0);
+  color: var(--text);
+  outline: none;
+
+  &.rounded {
+    padding: 0.5em 1em;
+    border-radius: 2em;
+  }
+}
+
+.label {
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.label_text {
+  font-size: 0.9em;
+}

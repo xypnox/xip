@@ -10,30 +10,18 @@
     "url": "git+https://github.com/xypnox/xip.git"
   },
   "exports": {
-    "solid": {
-      "development": "./dist/source/index.jsx",
-      "import": "./dist/source/index.jsx"
-    },
-    "development": {
-      "import": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": "./dist/cjs/index.js"
-    },
     "import": {
-      "types": "./dist/types/index.d.ts",
-      "default": "./dist/esm/index.js"
+      "types": "./dist/styles/index.d.ts",
+      "default": "./dist/styles/index.module.js"
     },
-    "require": "./dist/cjs/index.js"
+    "require": "./dist/styles/index.common.js"
   },
   "files": [
     "dist",
     "src"
   ],
   "keywords": [
-    "solidjs",
-    "notifications"
+    "solidjs"
   ],
   "author": "xypnox",
   "license": "TBD",
@@ -46,19 +34,21 @@
     "dev": "rollup --watch -c"
   },
   "homepage": "https://github.com/xypnox/xip#readme",
-  "dependencies": {},
   "peerDependencies": {
     "solid-js": "^1.5.4",
-    "themescura": "workspace:*",
-    "solid-styled-components": "^0.28.5"
+    "themescura": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^18.7.16",
+    "postcss-modules": "^6.0.0",
     "prettier": "^2.7.1",
     "rollup": "^2.75.7",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.4.2",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "typescript-plugin-css-modules": "^5.1.0"
   }
 }

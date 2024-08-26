@@ -1,0 +1,17 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * + * {
+    margin-block-start: var(--space, 1.5em);
+  }
+
+  &:only-child {
+    block-size: 100%;
+  }
+
+  & > .stack-split-child {
+    margin-block-start: var(--space, 1.5em);
+  }
+}

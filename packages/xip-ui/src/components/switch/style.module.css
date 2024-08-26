@@ -1,0 +1,58 @@
+.switch_input {
+  --check-width: max(0.1em, 2px);
+  --check-contrast-color: var(--surface-0);
+  --check-color: var(--text);
+  --check-color-hover: var(--textS-0);
+  font-size: inherit;
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  background: var(--surface-0);
+  outline: none;
+  z-index: 4;
+  border-radius: 0.25em;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  cursor: pointer;
+  border: 0.1em solid var(--border);
+
+  &:hover {
+    border-color: var(--primary-s-6);
+    background: var(--surface-1);
+  }
+
+  &:focus {
+    outline: 0.125em solid var(--primary-b);
+    outline-offset: 0.125em;
+  }
+
+  /* ${['primary', 'secondary', 'tertiary'].map(generateClass).join('\n')} */
+
+  &:checked {
+    /* Check width is variable to ensure it is visible on smallest sizes */
+    border-color: var(--check-color);
+    background: var(--check-color);
+    &::before {
+      position: absolute;
+      content: '';
+      width: 0.25em;
+      height: 0.5em;
+      margin-left: 0.24em;
+      margin-top: 0.05em;
+      transform: rotate(45deg);
+      border-bottom: var(--check-width) solid var(--check-contrast-color);
+      border-right: var(--check-width) solid var(--check-contrast-color);
+      border-radius: 0 0 var(--check-width) 0;
+    }
+
+    &:hover {
+      background: var(--check-color-hover);
+      border-color: var(--check-color-hover);
+    }
+  }
+}
+
+.switch_label {
+  align-items: center;
+  flex-direction: row;
+}

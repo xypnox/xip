@@ -1,0 +1,32 @@
+.card {
+  padding: 1em;
+  gap: 0.5em;
+  background: var(--surface-0);
+  color: var(--text);
+  border-radius: 0.5em;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  &:has(&) {
+    border-radius: calc(2 * 0.5em);
+  }
+
+  &:has(& > &) {
+    border-radius: calc(4 * 0.5em);
+  }
+
+  & > & {
+    background: var(--surface-1);
+  }
+  & > & > & {
+    background: var(--surface-2);
+  }
+}
