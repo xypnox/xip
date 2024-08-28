@@ -43,6 +43,7 @@ export const RangeInput = (props: RangeInputProps) => {
         }}
       />
       <input
+        class={styles.range_input}
         ref={Input!}
         type="range"
         min={props.min}

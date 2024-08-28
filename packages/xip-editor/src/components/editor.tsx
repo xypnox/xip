@@ -1,6 +1,6 @@
 import { ComponentProps } from "solid-js";
 import styles from "./editor.module.css";
-import { Button, Cluster, Stack, Input, Label, LabelText, Card, SwitchInp } from "xip-ui";
+import { Button, Cluster, Stack, Input, Label, LabelText, Card, SwitchInp } from "@xypnox/xip-ui";
 
 
 interface ThemePreviewProps extends ComponentProps<'div'> { }

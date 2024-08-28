@@ -47,9 +47,8 @@
   "homepage": "https://github.com/xypnox/xip#readme",
   "peerDependencies": {
     "solid-js": "^1.5.4",
-    "solid-styled-components": "^0.28.5",
-    "themescura": "workspace:*",
-    "xip-ui": "workspace:*"
+    "@xypnox/themescura": "workspace:*",
+    "@xypnox/xip-ui": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.0",

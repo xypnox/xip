@@ -53,7 +53,7 @@
   "homepage": "https://github.com/xypnox/xip#readme",
   "peerDependencies": {
     "solid-js": "^1.5.4",
-    "themescura": "workspace:*"
+    "@xypnox/themescura": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.0",

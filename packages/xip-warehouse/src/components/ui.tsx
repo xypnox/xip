@@ -1,24 +1,13 @@
-import { Button, RangeInput, Card, Stack as UIColumn, Input, Label, Cluster as UIRow, LabelText, SwitchInp } from "xip-ui";
-import { styled } from 'solid-styled-components';
-import { createSignal, type ComponentProps, type ParentProps, For, Switch } from "solid-js";
-
-const Row = styled(UIRow)`
-  gap: 1em;
-  flex-wrap: wrap;
-`
-
-const Column = styled(UIColumn)`
-  gap: 1em;
-`
-
+import { Button, RangeInput, Card, Stack, Input, Label, Cluster, LabelText, SwitchInp } from "@xypnox/xip-ui";
+import { createSignal, type ComponentProps, type ParentProps } from "solid-js";
 
 const ScaledRepitition = (props: ParentProps & {
   limit?: number
   showSize?: boolean
   column?: boolean
-} & ComponentProps<typeof Row>) => {
+} & ComponentProps<typeof Cluster>) => {
   return (
-    <Row style={{
+    <Cluster style={{
       'align-items': props.column ? 'flex-start' : 'center',
       'flex-direction': props.column ? 'column' : 'row',
       'gap': '1em',
@@ -31,7 +20,7 @@ const ScaledRepitition = (props: ParentProps & {
             {props.showSize ? `--font-size-${step}` : props.children}
           </div>
         ))}
-    </Row>
+    </Cluster>
   )
 }
 
@@ -40,20 +29,20 @@ interface RepProps extends ParentProps {
 }
 
 const ButtonRepetition = (props: RepProps) => (
-  <Row>
+  <Cluster>
     <Button {...props.buttonProps}>{props.children}</Button>
     <Button disabled {...props.buttonProps}>{props.children}</Button>
     <Button {...props.buttonProps} class={`primary ${props.buttonProps?.class}`}>{props.children}</Button>
     <Button {...props.buttonProps} class={`secondary ${props.buttonProps?.class}`}>{props.children}</Button>
     <Button {...props.buttonProps} class={`tertiary ${props.buttonProps?.class}`}>{props.children}</Button>
-  </Row>
+  </Cluster>
 )
 
 const [value, setValue] = createSignal(50);
 const [inpValue, setInpValue] = createSignal('designer@developer.cool');
 
 export const UIElements = () => (
-  <Column>
+  <Stack>
 
     <h2>Typography</h2>
 
@@ -71,15 +60,15 @@ export const UIElements = () => (
     }}>Mono</div></ScaledRepitition>
     <h2>Layout</h2>
 
-    <Row>
-      <div>Row</div>
+    <Cluster>
+      <div>Cluster</div>
       <div>Elements 1</div>
       <div>Elements 2</div>
       <div>Elements 3</div>
-    </Row>
+    </Cluster>
 
     <h2>Buttons</h2>
-    <Column>
+    <Stack>
       <p>Classic Buttons</p>
       <ButtonRepetition>Button</ButtonRepetition>
       <ButtonRepetition buttonProps={{ class: 'rounded' }}>Button</ButtonRepetition>
@@ -106,11 +95,11 @@ export const UIElements = () => (
       <ScaledRepitition>
         <Button class="rounded"> <iconify-icon icon="ph:resize-duotone" /> Resize </Button>
       </ScaledRepitition>
-    </Column>
+    </Stack>
 
     <h2>Inputs</h2>
-    <Column>
-      <Row style={{ "align-items": "flex-end" }}>
+    <Stack>
+      <Cluster style={{ "align-items": "flex-end" }}>
         <Label>
           <LabelText>Email</LabelText>
           <Input name="email" type="text" autocomplete="true" />
@@ -122,7 +111,7 @@ export const UIElements = () => (
           {/*   <Input name="username" type="text" autocomplete="true" /> */}
           {/* </IconInput> */}
         </Label>
-      </Row>
+      </Cluster>
       <Label>
         <LabelText>Password</LabelText>
         <Input type="password" name="password" />
@@ -165,18 +154,18 @@ export const UIElements = () => (
 
       <h3>Checkboxes and Switches</h3>
 
-      <Row>
+      <Cluster>
         <SwitchInp checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
         <SwitchInp class="primary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
         <SwitchInp class="secondary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
         <SwitchInp class="tertiary" checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Checkboxes" />
-      </Row>
+      </Cluster>
 
       <ScaledRepitition>
         <SwitchInp checked={true} onChange={(e) => console.log('changed', e.currentTarget.checked)} label="Chex" />
       </ScaledRepitition>
 
-    </Column>
+    </Stack>
 
     <h2>Cards</h2>
     <Card>
@@ -192,6 +181,6 @@ export const UIElements = () => (
         </Card>
       </Card>
     </ScaledRepitition>
-  </Column>
+  </Stack>
 )
 

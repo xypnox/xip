@@ -1,5 +1,5 @@
-import { Editor, ThemeDebug } from "xip-editor";
-import { Stack } from "xip-ui";
+import { Editor, ThemeDebug } from "@xypnox/xip-editor";
+import { Stack } from "@xypnox/xip-ui";
 import { palette, theme } from "../theme";
 
 export const ThemeEditor = () => {

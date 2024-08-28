@@ -1,6 +1,6 @@
 import { createMemo, Show, Switch, Match, For } from 'solid-js';
-import type { Fn, ThemeFn, PaletteFn } from 'themescura';
-import { Stack } from 'xip-ui';
+import type { Fn, ThemeFn, PaletteFn } from '@xypnox/themescura';
+import { Stack } from '@xypnox/xip-ui';
 import styles from './debug.module.css';
 
 interface Props<B extends Fn, M extends Fn> {

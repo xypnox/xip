@@ -1,4 +1,4 @@
-import { cssConverter, generateTheme, getShades, typeScale, shiftLCH } from 'themescura'
+import { cssConverter, generateTheme, getShades, typeScale, shiftLCH } from '@xypnox/themescura'
 
 const base = {
   layout: {
