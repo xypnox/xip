@@ -1,5 +1,5 @@
 {
-  "name": "themescura",
+  "name": "@xypnox/themescura",
   "version": "0.1.0",
   "description": "A design system and theme engine toolkit",
   "type": "module",

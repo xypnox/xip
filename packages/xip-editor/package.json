@@ -1,5 +1,5 @@
 {
-  "name": "xip-editor",
+  "name": "@xypnox/xip-editor",
   "version": "0.1.0",
   "description": "",
   "main": "dist/cjs/index.js",
