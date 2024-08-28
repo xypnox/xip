@@ -1,33 +1,14 @@
 import { ComponentProps } from "solid-js";
-import { styled } from "solid-styled-components";
-import { Button, Column, Row, Input, Label, LabelText, Card, SwitchInp } from "xip-ui";
+import styles from "./editor.module.css";
+import { Button, Cluster, Stack, Input, Label, LabelText, Card, SwitchInp } from "xip-ui";
 
-const PreviewWrapper = styled(Column)`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 1em;
-  gap: 2em;
-  background: var(--background);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 1.5em;
-  h3, h4, h5, p {
-    margin: 0;
-  }
-  ${Column.class} {
-    gap: 1em;
-  }
-  ${Card.class} {
-    gap: 0.5em;
-  }
-`
 
 interface ThemePreviewProps extends ComponentProps<'div'> { }
+
 const ThemePreview = (props: ThemePreviewProps) => {
-  return <PreviewWrapper {...props}>
+  return <div {...props} class={styles.previewWrapper}>
     <h3>{props.class}</h3>
-    <Column>
+    <Stack>
       <Label>
         <LabelText>Email</LabelText>
         <Input name="email" type="text" autocomplete="true" />
@@ -37,16 +18,16 @@ const ThemePreview = (props: ThemePreviewProps) => {
         <Input name="password" type="password" autocomplete="true" />
       </Label>
       <SwitchInp label="Remember Me" checked onChange={() => { }} />
-    </Column>
-    <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
+    </Stack>
+    <Cluster style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <Button class="primary">Primary</Button>
       <Button class="secondary">Secondary</Button>
       <Button class="tertiary">Tertiary</Button>
-    </Row>
-    <Row style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
+    </Cluster>
+    <Cluster style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <Button>Basic</Button>
       <Button disabled>Disabled</Button>
-    </Row>
+    </Cluster>
     <Card>
       <p>Card</p>
     </Card>
@@ -70,23 +51,15 @@ const ThemePreview = (props: ThemePreviewProps) => {
         </Card>
       </Card>
     </Card>
-  </PreviewWrapper>;
+  </div>;
 
 }
 
-const PreviewRow = styled(Row)`
-  width: 100%;
-  gap: 1em;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`
-
 export const ThemePreviews = () => (
-  <PreviewRow style={{ gap: '1em' }}>
+  <div class={styles.previewRow} style={{ gap: '1em' }}>
     <ThemePreview class="light-mode" />
     <ThemePreview class="dark-mode" />
-  </PreviewRow>
+  </div>
 )
 
 export const Editor = () => {

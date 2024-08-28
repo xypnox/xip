@@ -2,32 +2,49 @@
   "name": "xip-ui",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
+  "source": "src/index.tsx",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xypnox/xip.git"
   },
-  "exports": {
-    "import": {
-      "types": "./dist/styles/index.d.ts",
-      "default": "./dist/styles/index.module.js"
-    },
-    "require": "./dist/styles/index.common.js"
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "keywords": [
-    "solidjs"
-  ],
   "author": "xypnox",
   "license": "TBD",
   "bugs": {
     "url": "https://github.com/xypnox/xip/issues"
   },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "solid": {
+        "default": "./dist/source/index.jsx",
+        "types": "./dist/types/index.d.ts"
+      },
+      "import": {
+        "default": "./dist/esm/index.js",
+        "types": "./dist/types/index.d.ts"
+      },
+      "browser": {
+        "default": "./dist/esm/index.js",
+        "types": "./dist/types/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/cjs/index.js",
+        "types": "./dist/types/index.d.ts"
+      },
+      "node": {
+        "default": "./dist/cjs/index.js",
+        "types": "./dist/types/index.d.ts"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "solidjs"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "rollup -c",
@@ -45,6 +62,7 @@
     "postcss-modules": "^6.0.0",
     "prettier": "^2.7.1",
     "rollup": "^2.75.7",
+    "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.4.2",

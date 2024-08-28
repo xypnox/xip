@@ -12,6 +12,10 @@
     padding: 0.5em 1em;
     border-radius: 2em;
   }
+  &:hover,
+  &:focus {
+    border-color: var(--primary-s-2);
+  }
 }
 
 .label {

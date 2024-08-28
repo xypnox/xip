@@ -2,7 +2,7 @@ import { JSX } from "solid-js/jsx-runtime";
 import styles from "./style.module.css";
 import inputStyles from "../input/style.module.css";
 
-interface SwitchProps extends JSX.HTMLAttributes<HTMLInputElement> {
+interface SwitchProps extends JSX.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   checked: boolean;
   onChange: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event>;

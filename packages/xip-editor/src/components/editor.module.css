@@ -1,0 +1,26 @@
+.previewRow {
+  width: 100%;
+  gap: 1em;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.previewWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1em;
+  gap: 2em;
+  background: var(--background);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 1.5em;
+
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 0;
+  }
+}
