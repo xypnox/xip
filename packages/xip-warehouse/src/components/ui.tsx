@@ -1,4 +1,4 @@
-import { Button, RangeInput, Card, Column as UIColumn, Input, Label, Row as UIRow, IconInput, LabelText, SwitchInp } from "xip-ui";
+import { Button, RangeInput, Card, Stack as UIColumn, Input, Label, Cluster as UIRow, LabelText, SwitchInp } from "xip-ui";
 import { styled } from 'solid-styled-components';
 import { createSignal, type ComponentProps, type ParentProps, For, Switch } from "solid-js";
 
@@ -117,22 +117,22 @@ export const UIElements = () => (
         </Label>
         <Label>
           <LabelText>Username</LabelText>
-          <IconInput class="left">
-            <iconify-icon icon="ph:at-duotone" />
-            <Input name="username" type="text" autocomplete="true" />
-          </IconInput>
+          {/* <IconInput class="left"> */}
+          {/*   <iconify-icon icon="ph:at-duotone" /> */}
+          {/*   <Input name="username" type="text" autocomplete="true" /> */}
+          {/* </IconInput> */}
         </Label>
       </Row>
       <Label>
         <LabelText>Password</LabelText>
         <Input type="password" name="password" />
       </Label>
-      <ScaledRepitition>
-        <IconInput class="left">
-          <iconify-icon icon="ph:tree" />
-          <Input name="search" type="text" placeholder="Sycamore" class="rounded" />
-        </IconInput>
-      </ScaledRepitition>
+      {/* <ScaledRepitition> */}
+      {/*   <IconInput class="left"> */}
+      {/*     <iconify-icon icon="ph:tree" /> */}
+      {/*     <Input name="search" type="text" placeholder="Sycamore" class="rounded" /> */}
+      {/*   </IconInput> */}
+      {/* </ScaledRepitition> */}
       <ScaledRepitition>
         <Label>
           <LabelText>Input</LabelText>
