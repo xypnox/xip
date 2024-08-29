@@ -14,7 +14,10 @@
   background-color: var(--surface-0);
   border: 0.125em solid transparent;
 
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
   transition-timing-function: ease-in-out;
 
   iconify-icon {
@@ -55,5 +58,22 @@
     border: 2px solid var(--border);
     color: var(--text);
     opacity: 0.66;
+  }
+
+  &.variant {
+    color: var(--variant-o);
+    border-color: var(--variant-b);
+    background-color: var(--variant-b);
+    &:hover {
+      border-color: var(--variant-s-6);
+      background-color: var(--variant-s-6);
+    }
+    &:active {
+      border-color: var(--variant-s-4);
+      background-color: var(--variant-s-4);
+    }
+    &:focus {
+      outline-color: var(--variant-b);
+    }
   }
 }

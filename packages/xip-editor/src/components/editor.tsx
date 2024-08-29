@@ -1,13 +1,16 @@
-import { ComponentProps } from "solid-js";
+import { ComponentProps, splitProps } from "solid-js";
 import styles from "./editor.module.css";
 import { Button, Cluster, Stack, Input, Label, LabelText, Card, SwitchInp } from "@xypnox/xip-ui";
 
 
-interface ThemePreviewProps extends ComponentProps<'div'> { }
+interface ThemePreviewProps extends ComponentProps<'div'> {
+  mode: 'light' | 'dark'
+}
 
 const ThemePreview = (props: ThemePreviewProps) => {
-  return <div {...props} class={styles.previewWrapper}>
-    <h3>{props.class}</h3>
+  const [local, rest] = splitProps(props, ['mode'])
+  return <Cluster {...rest} class={`${styles.previewWrapper} ${local.mode}-mode`}>
+    <h3>{props.mode}</h3>
     <Stack>
       <Label>
         <LabelText>Email</LabelText>
@@ -20,9 +23,9 @@ const ThemePreview = (props: ThemePreviewProps) => {
       <SwitchInp label="Remember Me" checked onChange={() => { }} />
     </Stack>
     <Cluster style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
-      <Button class="primary">Primary</Button>
-      <Button class="secondary">Secondary</Button>
-      <Button class="tertiary">Tertiary</Button>
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="tertiary">Tertiary</Button>
     </Cluster>
     <Cluster style={{ gap: '1em', 'flex-wrap': 'wrap' }}>
       <Button>Basic</Button>
@@ -51,15 +54,15 @@ const ThemePreview = (props: ThemePreviewProps) => {
         </Card>
       </Card>
     </Card>
-  </div>;
+  </Cluster>;
 
 }
 
 export const ThemePreviews = () => (
-  <div class={styles.previewRow} style={{ gap: '1em' }}>
-    <ThemePreview class="light-mode" />
-    <ThemePreview class="dark-mode" />
-  </div>
+  <Cluster class={styles.previewRow} style={{ gap: '1em' }}>
+    <ThemePreview mode="light" />
+    <ThemePreview mode="dark" />
+  </Cluster>
 )
 
 export const Editor = () => {

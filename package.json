@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "comment: THIS IS A WORKSPACE": "So call all the individual pnpm start commands",
     "dev": "pnpm --stream --parallel -r run dev",
-    "build": "pnpm --stream -r run build"
+    "build": "pnpm --stream -r run build",
+    "build-lib": "pnpm --filter=\"!@xypnox/xip-warehouse\" --stream -r run build"
   },
   "keywords": [],
   "author": "",

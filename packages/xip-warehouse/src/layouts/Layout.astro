@@ -213,6 +213,34 @@ import Nav from '../components/nav.astro';
       height: auto;
     }
   }
+  figure.full {
+    width: 100%;
+    margin: 2em 0;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+  code {
+    color: var(--primary-s-4);
+    padding: 0.2em 0.5em;
+    background: var(--surface-0);
+    border-radius: 0.2em;
+  }
+
+  pre code {
+    color: inherit;
+    background: none;
+    padding: 0;
+  }
+
+  .astro-code.xipDark {
+    background: var(--surface-0);
+    padding: 1em;
+    border-radius: 1em;
+  }
   @media (max-width: 800px) {
     figure.aside {
       float: none;

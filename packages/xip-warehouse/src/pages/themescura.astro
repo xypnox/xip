@@ -2,17 +2,66 @@
 import Layout from '../layouts/Layout.astro';
 import {cssVal, palette, theme} from '../theme';
 import {ThemeEditor} from '../components/editor';
+import fs from 'node:fs';
+import { Stack } from '@xypnox/xip-ui';
+import {Content as DocsContent} from '../docs/themescura.md';
+import { Code } from 'astro:components';
+
+import shikiJson from '../../shiki.json';
+
+const getRawSvg = async () => {
+  // read the svg file
+  return fs.promises.readFile('./src/assets/themescura-work.svg')
+    .then(response => response.toString())
+    .then(text => {
+      return text;
+    });
+}
+
+const svg = await getRawSvg(); 
+
+
+const usageExample = await (async () => {
+  return fs.promises.readFile('./src/theme.ts')
+    .then(response => response.toString())
+    .then(text => {
+      return text;
+    });
+})();
 ---
 
 <Layout title="Themescura | xip">
   <h1 class="title">Themescura</h1>
   <p>An Obscura of Variables, Modes and Themes</p>
 
+  <h2>Installation</h2>
+
+  <code>pnpm add @xypnox/themescura</code>
+
+  <h2>Usage</h2>
+
+  <Stack style={{ width: '100%' }}>
+    <figure class="full" set:html={svg} />
+  </Stack>
+
+  <DocsContent />
+
+  <h2>Usage</h2>
+
+  <p>Consider the following <code>theme.ts</code>, that is being used to define the theme for this website.</p>
+
+  <p>Here we are also using a few helper functions.</p>
+  <!-- <pre><code>{usageExample}</code></pre> -->
+  <!-- Syntax highlight some JavaScript code. -->
+  <Code code={usageExample} theme={shikiJson} lang="ts" />
+
   <hr />
 
-  <p>
 
   <h2>Demo</h2>
+
+  <p>Note that the palette and components are from xip-ui. Themescura itself is indepndent of the schema of your tokens.</p>
+
   <ThemeEditor client:load />
 
   <h3>Base Palette</h3>

@@ -1,16 +1,15 @@
-import { createMemo, Show, Switch, Match, For } from 'solid-js';
-import type { Fn, ThemeFn, PaletteFn } from '@xypnox/themescura';
-import { Stack } from '@xypnox/xip-ui';
+import { createMemo, Switch, Match, For, Show } from 'solid-js';
+import { Cluster, Stack } from '@xypnox/xip-ui';
 import styles from './debug.module.css';
 
-interface Props<B extends Fn, M extends Fn> {
-  theme: ThemeFn<B, M>
-  palette: PaletteFn<B, M>
+type NObj = Record<string, any>
+
+interface Props<T, P> {
+  theme: T
+  palette: P
 }
 
-export const ThemeDebug = <B extends Fn, M extends Fn>(props: Props<B, M>) => {
-  // console.log('Theme:', props.theme)
-
+export const ThemeDebug = <T extends NObj, P extends NObj>(props: Props<T, P>) => {
   return <div class={styles.wrapper}>
     <h2>Theme Debug</h2>
     <h3>Palette</h3>
@@ -44,16 +43,16 @@ const detectCssValue = (value: string): {
   return { type: 'unknown' }
 }
 
-const ValueDebug = (props: { value: string }) => {
+const ValueDebug = (props: { value: string, title?: string }) => {
   const typeValue = createMemo(() => {
     return detectCssValue(props.value)
   })
 
-  return <div classList={{
-    [styles.noshade]: typeValue().type === 'color',
-    [styles.row]: true
-
-  }}>
+  return <Cluster
+    title={props.title}
+    classList={{
+      [styles.noshade]: typeValue().type === 'color',
+    }}>
     <Show when={typeValue().type === 'color'}>
       <div class={styles.colorPreview} style={{
         '--color': props.value
@@ -62,10 +61,10 @@ const ValueDebug = (props: { value: string }) => {
     <Show when={typeValue().type === 'length' || typeValue().type === 'percentage' || typeValue().type === 'unknown'}>
       {props.value}
     </Show>
-  </div>
+  </Cluster>
 }
 
-const ObjectDebug = (props: { obj: any }) => {
+const ObjectDebug = (props: { obj: any, title?: string }) => {
   const typeObj = createMemo(() => {
     if (props.obj === null) {
       return 'null'
@@ -77,28 +76,28 @@ const ObjectDebug = (props: { obj: any }) => {
 
   return <Switch fallback={<div>{JSON.stringify(props.obj)}</div>}>
     <Match when={typeObj() === 'string' || typeObj() === 'number' || typeObj() === 'boolean'}>
-      <ValueDebug value={props.obj} />
+      <ValueDebug title={props.title} value={props.obj.toString()} />
     </Match>
     <Match when={typeObj() === 'function'}>
       Function {props.obj.name}
     </Match>
     <Match when={typeObj() === 'array'}>
-      <div style={{ gap: '0' }} class="noshade">
+      <Cluster title={props.title} style={{ gap: '0' }} class={styles.noshade}>
         <For each={props.obj}>
-          {item => {
-            return <ObjectDebug obj={item} />
+          {(item, i) => {
+            return <ObjectDebug title={i().toString()} obj={item} />
           }}
         </For>
-      </div>
+      </Cluster>
     </Match>
     <Match when={typeObj() === 'object'}>
       <Stack>
         <For each={Object.keys(props.obj)}>
           {key => {
-            return <div>
+            return <Cluster>
               <div class={styles.key}>{key}</div>
               <ObjectDebug obj={props.obj[key]} />
-            </div>
+            </Cluster>
           }}
         </For>
       </Stack>

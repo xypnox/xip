@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "sleep 5 && astro dev",
+    "dev-fast": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -11,13 +12,13 @@
   "dependencies": {
     "@astrojs/check": "^0.5.5",
     "@astrojs/solid-js": "^4.2.0",
+    "@xypnox/themescura": "workspace:*",
+    "@xypnox/xip-editor": "workspace:*",
+    "@xypnox/xip-ui": "workspace:*",
     "astro": "^4.4.4",
     "iconify-icon": "^2.1.0",
     "solid-js": "^1.8.17",
-    "typescript": "^5.3.3",
-    "@xypnox/themescura": "workspace:*",
-    "@xypnox/xip-editor": "workspace:*",
-    "@xypnox/xip-ui": "workspace:*"
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "typescript-plugin-css-modules": "^5.1.0"

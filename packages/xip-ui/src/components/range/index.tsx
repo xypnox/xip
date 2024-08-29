@@ -19,7 +19,6 @@ export const RangeInput = (props: RangeInputProps) => {
   onMount(() => {
     const input = Input;
     if (input) {
-      console.log(input && input.value);
       // Call the input handler to update the value
       props.onChange({
         target: input,
