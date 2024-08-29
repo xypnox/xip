@@ -1,6 +1,6 @@
 {
   "name": "xip",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/xypnox/xip"
-  },
-  "private": true
+  }
 }
