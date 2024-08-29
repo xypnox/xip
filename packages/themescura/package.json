@@ -11,9 +11,24 @@
     "dev": "rollup --watch -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "keywords": [
+    "css-variables",
+    "theme-tokens",
+    "dynamic-theming",
+    "style-management",
+    "custom-properties",
+    "responsive-themes",
+    "design-system",
+    "theming-engine",
+    "ui-design",
+    "web-development"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
     "prettier": "^3.2.5",

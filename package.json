@@ -10,9 +10,7 @@
     "build": "pnpm --stream -r run build",
     "build-lib": "pnpm --filter=\"!@xypnox/xip-warehouse\" --stream -r run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "xypnox",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"

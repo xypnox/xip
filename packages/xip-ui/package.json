@@ -7,8 +7,12 @@
     "type": "git",
     "url": "git+https://github.com/xypnox/xip.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "author": "xypnox",
-  "license": "TBD",
+  "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/xypnox/xip/issues"
   },
@@ -43,7 +47,18 @@
     "dist"
   ],
   "keywords": [
-    "solidjs"
+    "solidjs",
+    "ui-components",
+    "css-modules",
+    "solidjs-components",
+    "component-library",
+    "user-interface",
+    "design-system",
+    "web-ui",
+    "ui-framework",
+    "solidjs-ui",
+    "frontend-library",
+    "interactive-elements"
   ],
   "sideEffects": false,
   "scripts": {
