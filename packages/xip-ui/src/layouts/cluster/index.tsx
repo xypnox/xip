@@ -3,6 +3,7 @@ import styles from './style.module.css';
 
 interface LocalProps {
   space?: string
+  style?: JSX.CSSProperties
 }
 
 /**
@@ -12,7 +13,7 @@ export const Cluster = (props: JSX.HTMLAttributes<HTMLDivElement> & ParentProps 
   const [local, rest] = splitProps(props, ['space', 'style', 'class'])
 
   const newProps = mergeProps({
-    style: { '--space': local.space },
+    style: { '--space': local.space, ...(local.style as JSX.CSSProperties) },
     class: `${styles.cluster} ${local.class ?? ''}`
   }, rest);
 

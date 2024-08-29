@@ -1,6 +1,6 @@
 {
   "name": "@xypnox/themescura",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A design system and theme engine toolkit",
   "type": "module",
   "main": "dist/cjs/index.js",
