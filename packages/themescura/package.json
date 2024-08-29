@@ -1,6 +1,6 @@
 {
   "name": "@xypnox/themescura",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A design system and theme engine toolkit",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -29,6 +29,21 @@
   ],
   "author": "",
   "license": "GPL-3.0-only",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/esm/index.js",
+        "types": "./dist/esm/types/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/cjs/index.js",
+        "types": "./dist/cjs/types/index.d.ts"
+      }
+    }
+  },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
     "prettier": "^3.2.5",
