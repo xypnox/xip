@@ -15,9 +15,11 @@ export default defineConfig({
       RemarkLinkRewrite,
       {
         replacer: (url) => {
-          console.log('Replacing', { url })
           if (url.endsWith('.md')) {
-            return url.slice(0, -3)
+            // Also slice the starting charater
+              const newUrl = '/docs/api' + url.slice(0, -3).slice(1)
+            console.log('Replacing', { url, newUrl })
+            return newUrl
           }
           return url
         }
