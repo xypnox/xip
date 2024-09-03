@@ -1,0 +1,670 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.47.7",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@xypnox/xip-ui!",
+  "docComment": "",
+  "name": "@xypnox/xip-ui",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@xypnox/xip-ui!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!Button:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Button: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.ButtonHTMLAttributes",
+              "canonicalReference": "solid-js!JSX.ButtonHTMLAttributes:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "HTMLButtonElement",
+              "canonicalReference": "!HTMLButtonElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "> & {\n    variant?: 'primary' | 'secondary' | 'tertiary';\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/components/button/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "Button"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!Card:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Card: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.HTMLAttributes",
+              "canonicalReference": "solid-js!JSX.HTMLAttributes:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "HTMLDivElement",
+              "canonicalReference": "!HTMLDivElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "> & {\n    class?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/components/card/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "Card"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!Cluster:function(1)",
+          "docComment": "/**\n * Cluster in horizontal direction\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Cluster: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.HTMLAttributes",
+              "canonicalReference": "solid-js!JSX.HTMLAttributes:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "HTMLDivElement",
+              "canonicalReference": "!HTMLDivElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "> & "
+            },
+            {
+              "kind": "Reference",
+              "text": "ParentProps",
+              "canonicalReference": "solid-js!ParentProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": " & "
+            },
+            {
+              "kind": "Reference",
+              "text": "LocalProps",
+              "canonicalReference": "@xypnox/xip-ui!~LocalProps:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/layouts/cluster/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 8
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "Cluster"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!Input:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Input: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.InputHTMLAttributes",
+              "canonicalReference": "solid-js!JSX.InputHTMLAttributes:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "HTMLInputElement",
+              "canonicalReference": "!HTMLInputElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "> & {\n    class?: string;\n    rounded?: boolean;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/components/input/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "Input"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!Label:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Label: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.HTMLAttributes",
+              "canonicalReference": "solid-js!JSX.HTMLAttributes:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "HTMLLabelElement",
+              "canonicalReference": "!HTMLLabelElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "> & {\n    class?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/components/input/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "Label"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!LabelText:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "LabelText: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.HTMLAttributes",
+              "canonicalReference": "solid-js!JSX.HTMLAttributes:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "HTMLDivElement",
+              "canonicalReference": "!HTMLDivElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "> & {\n    class?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/components/input/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "LabelText"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!RangeInput:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "RangeInput: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RangeInputProps",
+              "canonicalReference": "@xypnox/xip-ui!~RangeInputProps:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/components/range/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "RangeInput"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!Stack:function(1)",
+          "docComment": "/**\n * Stack in vertical direction Add a stack-split-child from 'stack.module.css' to the children to separate into top and bottom'\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Stack: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.HTMLAttributes",
+              "canonicalReference": "solid-js!JSX.HTMLAttributes:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "HTMLDivElement",
+              "canonicalReference": "!HTMLDivElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "> & {\n    space?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/layouts/stack/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "Stack"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@xypnox/xip-ui!SwitchInp:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "SwitchInp: (props: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SwitchProps",
+              "canonicalReference": "@xypnox/xip-ui!~SwitchProps:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "solid-js!JSX.Element:type"
+            }
+          ],
+          "fileUrlPath": "dist/types/components/switch/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "props",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "SwitchInp"
+        }
+      ]
+    }
+  ]
+}

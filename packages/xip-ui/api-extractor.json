@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "extends": "../../api-extractor.base.json",
+  "mainEntryPointFilePath": "<projectFolder>/dist/types/index.d.ts",
+  "docModel": {
+    "enabled": true,
+    "apiJsonFilePath": "../xip-warehouse/doc/<unscopedPackageName>.api.json"
+  }
+}

@@ -1,0 +1,21 @@
+.toc-wrapper.toc-wrapper {
+  margin-top: 2em;
+  position: sticky;
+  block-size: max-content;
+  top: 1em;
+  gap: 1em;
+  z-index: 1;
+  h2 {
+    font-size: var(--font-size-sm);
+    margin: 0;
+  }
+  min-width: 20ch;
+}
+.toc-list {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  li {
+    padding-left: calc(var(--depth, 0) * 1rem);
+  }
+}

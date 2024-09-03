@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "sleep 5 && astro dev",
     "dev-fast": "astro dev",
-    "build": "astro check && astro build",
+    "build-warehouse": "pnpm run doc-pages && astro check && astro build",
+    "doc-pages": "api-documenter markdown --input-folder doc --output-folder src/content/docs/api",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -13,11 +14,14 @@
   "dependencies": {
     "@astrojs/check": "^0.5.5",
     "@astrojs/solid-js": "^4.2.0",
+    "@microsoft/api-documenter": "^7.25.12",
+    "@microsoft/api-extractor-model": "^7.29.6",
     "@xypnox/themescura": "workspace:*",
     "@xypnox/xip-editor": "workspace:*",
     "@xypnox/xip-ui": "workspace:*",
     "astro": "^4.4.4",
     "iconify-icon": "^2.1.0",
+    "remark-link-rewrite": "^1.0.7",
     "solid-js": "^1.8.17",
     "typescript": "^5.3.3"
   },

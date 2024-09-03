@@ -8,7 +8,9 @@
     "comment: THIS IS A WORKSPACE": "So call all the individual pnpm start commands",
     "dev": "pnpm --stream --parallel -r run dev",
     "build": "pnpm --stream -r run build",
-    "build-lib": "pnpm --filter=\"!@xypnox/xip-warehouse\" --stream -r run build"
+    "doc": "pnpm --stream -r run doc",
+    "build-warehouse": "pnpm run build && pnpm run doc && pnpm --stream -r run build-warehouse",
+    "prepare-publish": "pnpm run build-lib && pnpm --stream -r run doc"
   },
   "author": "xypnox",
   "publishConfig": {

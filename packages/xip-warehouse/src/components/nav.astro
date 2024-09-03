@@ -1,9 +1,12 @@
 ---
 import Switcher from './switcher.astro';
+import {Cluster} from '@xypnox/xip-ui';
+
 const links = [
   {
-    name: 'xip',
-    url: '/',
+    name: 'Docs',
+    url: '/docs/index',
+    match: '/docs/',
   },
   {
     name: 'Themescura',
@@ -22,12 +25,20 @@ const links = [
 const pathname = new URL(Astro.request.url).pathname;
 ---
 <nav>
+  <Cluster>
+    <a href='/' class={(pathname === '/' ? "active" : '') + ' home'}>
+      xip
+    </a>
+  </Cluster>
   <ul class="links"> 
     {links.map((link) => (
       <li>
         <a
           href={link.url}
-          class={(pathname === link.url ? "active" : '') + ((link.url === '/') ? ' home' : '')}
+        class={
+          link.match ? (pathname.startsWith( link.match) ? "active" : '') :
+          (pathname.startsWith( link.url) ? "active" : '')
+        }
         >
           {link.name}
         </a>
@@ -36,3 +47,41 @@ const pathname = new URL(Astro.request.url).pathname;
   </ul>
   <Switcher /> 
 </nav>
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1em;
+    gap: 1em 2em;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    ul {
+      padding: 0;
+      display: flex;
+      align-items: stretch;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 1em 2em;
+      margin: 0;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text);
+      height: 100%;
+    }
+    a.home {
+
+    }
+
+    a.active.active {
+      text-decoration: underline;
+      color: var(--textS-4);
+      text-decoration-color: var(--primary-b);
+    }
+  }
+</style>

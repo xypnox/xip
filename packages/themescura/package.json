@@ -9,6 +9,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup --watch -c",
+    "doc": "api-extractor run --local --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
@@ -45,6 +46,7 @@
     }
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.47.7",
     "@rollup/plugin-typescript": "^11.1.6",
     "prettier": "^3.2.5",
     "rollup": "^4.17.2",

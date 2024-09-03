@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { TableOfContents } from '../../components/toc';
+import {Stack} from '@xypnox/xip-ui';
+
+export async function getStaticPaths() {
+  const docCollection = await getCollection('docs');
+
+  const docPaths2 = docCollection.map(doc=> ({
+    params: { path: doc.id.slice(0, -3)},
+    props: {
+      entry: doc,
+      slug: doc.slug,
+    },
+  }))
+
+  // const docPaths = Promise.all(docs.map( async (doc) => {
+  //   const packageName = doc.default.name.split('/').pop()
+  //   return ({
+  //   // Select the last bit of the package name @user/package
+  //   params: { path: packageName },
+
+  //   props: {
+  //       data: doc.default,
+  //   }
+  // })}))
+
+
+  return docPaths2;
+}
+
+const {entry, slug} = Astro.props;
+
+// const entry = await getEntry('docs', slug);
+const { Content, headings } = await entry.render();
+---
+
+<Layout title={ `${slug} Docs | xip` }>
+  <div class="doc-wrapper">
+    <!-- <DocSidebar /> -->
+    <Stack class="doc-content">
+      <Content />
+    </Stack>
+    <TableOfContents headings={headings} />
+  </div>
+</Layout>
+
+<style>
+  .doc-wrapper {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+  }
+  .doc-content {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 66%;
+  }
+
+  .doc-wrapper > :last-child {
+    flex-grow: 1;
+  }
+</style>
+
+<style is:global>
+
+.doc-content {
+  & > p:first-child {
+    margin: 0;
+  }
+  h2 {
+    margin: 0.5em 0 0.2em;
+  }
+  h2:not(:first-of-type) {
+    font-size: var(--font-size-1);
+  }
+}
+a {
+  color: var(--text-s0);
+  text-decoration-color: var(--text-s0);
+  &:hover {
+    text-decoration-color: var(--primary-b);
+  }
+}
+
+table {
+  display: block;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table th {
+  border: 1px solid var(--border);
+  border-bottom: 2px solid var(--surface-2);
+  padding: 0.5em 1em;
+  color: var(--text-s1);
+}
+
+table td {
+  border: 1px solid var(--border);
+  padding: 0.5em 1em;
+}
+
+table p {
+  margin: 0;
+  max-width: 100%;
+}
+</style>

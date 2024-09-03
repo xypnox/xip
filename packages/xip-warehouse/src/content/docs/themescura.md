@@ -1,6 +1,8 @@
 ---
 ---
+# Themescura
 
+[API](/docs/api/themescura)
 
 What we want to achieve is a system where we can toggle a few key variables and the theme is generated accordingly. We want to define both the base variables and how those are converted to the final theme tokens.
 
@@ -21,4 +23,6 @@ Themescura provides a few core functions:
 
 - **`cssConverter()`**   
   converts a theme object to css string with dark, light classes and user-preference media queries.
+
+
 

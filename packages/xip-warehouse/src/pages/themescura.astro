@@ -4,10 +4,6 @@ import {cssVal, palette, theme} from '../theme';
 import {ThemeEditor} from '../components/editor';
 import fs from 'node:fs';
 import { Stack } from '@xypnox/xip-ui';
-import {Content as DocsContent} from '../docs/themescura.md';
-import { Code } from 'astro:components';
-
-import shikiJson from '../../shiki.json';
 
 const getRawSvg = async () => {
   // read the svg file
@@ -43,19 +39,6 @@ const usageExample = await (async () => {
   <Stack style={{ width: '100%' }}>
     <figure class="full" set:html={svg} />
   </Stack>
-
-  <DocsContent />
-
-  <h2>Usage</h2>
-
-  <p>Consider the following <code>theme.ts</code>, that is being used to define the theme for this website.</p>
-
-  <p>Here we are also using a few helper functions.</p>
-  <!-- <pre><code>{usageExample}</code></pre> -->
-  <!-- Syntax highlight some JavaScript code. -->
-  <Code code={usageExample} theme={shikiJson} lang="ts" />
-
-  <hr />
 
 
   <h2>Demo</h2>

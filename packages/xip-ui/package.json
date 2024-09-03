@@ -63,14 +63,16 @@
   "sideEffects": false,
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup --watch -c"
+    "dev": "rollup --watch -c",
+    "doc": "api-extractor run --local --verbose"
   },
   "homepage": "https://github.com/xypnox/xip#readme",
   "peerDependencies": {
-    "solid-js": "^1.5.4",
-    "@xypnox/themescura": "workspace:*"
+    "@xypnox/themescura": "workspace:*",
+    "solid-js": "^1.5.4"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.47.7",
     "@rollup/plugin-babel": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^18.7.16",
