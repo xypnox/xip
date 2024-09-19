@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em;
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      color: var(--text);
+    }
+  }
+}

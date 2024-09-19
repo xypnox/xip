@@ -1,0 +1,32 @@
+.hero.hero {
+  gap: 2em;
+  .content {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 50%;
+
+    gap: 1em;
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-style: italic;
+      font-size: var(--font-size-3);
+    }
+
+    h2 {
+      font-weight: normal;
+      font-size: var(--font-size-1);
+    }
+  }
+  img {
+    flex-basis: 20em;
+    flex-grow: 1;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
