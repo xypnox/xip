@@ -9,20 +9,23 @@ const getVariantStyles = (variant: 'primary' | 'secondary' | 'tertiary') => ({
   '--variant-s-4': `var(--${variant}-s-4)`
 })
 
-export const Button = (props: JSX.ButtonHTMLAttributes<HTMLButtonElement> & {
+export const Button = (props: Omit<JSX.ButtonHTMLAttributes<HTMLButtonElement>, "style"> & {
   /**
    * The variant of the button to use (color)
    */
   variant?: 'primary' | 'secondary' | 'tertiary'
-}) => {
-  const [local, rest] = splitProps(props, ['variant', 'class'])
 
+  style?: JSX.CSSProperties
+}) => {
+  const [local, rest] = splitProps(props, ['variant', 'class', 'classList', 'style'])
   const newProps = mergeProps({
     style: {
-      ...(local.variant ? getVariantStyles(local.variant) : {})
+      ...(local.variant ? getVariantStyles(local.variant) : {}),
+      ...local.style,
     },
-    class: styles.button,
+    class: `${styles.button} ${local.class}`,
     classList: {
+      ...local.classList,
       [styles.variant]: !!local.variant,
     }
   }, rest);
